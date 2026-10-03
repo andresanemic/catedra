@@ -1,10 +1,12 @@
 # Evidence
 
-## Current result
+This page separates the captured result from historical runs and from claims the tests cannot establish. The test names below are retained in Spanish as recorded by the suite.
 
-The captured suite contains 35 tests: 34 pass, 1 fails, and 0 are skipped or marked TODO. The failing test is **“el núcleo que consume Cátedra es el corte fijado, módulo por módulo.”** Its `continuity.js` digest differs from the expected digest. This failure is the project's deliberate kernel pin: Cátedra was built on kernel cut `54c20c7`, while the installed kernel is now 0.1.3. The nine code projects were built on that 2026-09-29 cut and their own records report green suites there. Each pins the kernel digest it consumes and is meant to fail when that kernel moves. Re-pinning against the installed kernel and rerunning the suites remains pending. These results show a working path, not a finished product or readiness for use.
+## Captured suite
 
-The captured suite output was supplied with the project materials. This public repository does not include the source code today, so the commands below apply once the code opens during the judges' review period.
+The captured run reports 35 tests: 34 pass, 1 fails, and none are skipped or marked TODO. The failure is `el núcleo que consume Cátedra es el corte fijado, módulo por módulo`. Its module-by-module digest check finds that `continuity.js` no longer matches the value Cátedra pinned. The agreement and phase record identify the pinned kernel cut as `54c20c7`; the installed kernel is now `0.1.3`. In the captured output, the actual digest is `073ecacdf099b0af53e49f3cecf1ba7e9e3ea910a4505ee422034857ac9d8d81` and the expected pinned digest is `ceba712aa3d9300a83382b90dd5ab97bb5809fe1a3f779c99f0984bf6305e73e`.
+
+The failure is the explicit kernel pin detecting a changed dependency. It prevents the project from silently treating a different kernel as the reviewed one. Updating the pin requires an explicit decision and a new suite run; that work is pending. Until then, the captured result remains 34/35. This count is the current captured suite, not the historical green run described below.
 
 ## What the tests cover
 
@@ -18,9 +20,9 @@ The captured suite output was supplied with the project materials. This public r
 - `quien no está matriculado no puede entregar, aunque la convocatoria esté abierta`
 - `la entrega con declaración guardada lleva la proporción y la herramienta en el registro`
 
-These check enrollment timing, course-specific permission, and the required AI-use declaration. They do not check whether the declaration is true.
+These tests cover enrollment timing, course-specific permission, and the presence of the AI-use declaration. They do not determine whether a declaration is true.
 
-### Grades, approvals and corrections
+### Grades, approvals, and corrections
 
 - `sin que el profesor firme, la nota no se escribe y el núcleo pregunta`
 - `con la firma del profesor la nota se escribe y nombra a quien firmó en el recibo`
@@ -30,9 +32,9 @@ These check enrollment timing, course-specific permission, and the required AI-u
 - `la estudiante no puede firmar su propia nota: el núcleo filtra al agente`
 - `el gate del núcleo cuenta el nombre que le escriban, aunque no sea el profesor: por eso la firma es otra capa`
 
-The last test records an important boundary: the kernel signer gate counts the name supplied at the gate. Cátedra's separate cryptographic signature check rejects an invalid signature, but the kernel receipt can still name the entered person. A name at that gate is not proof of identity.
+The last test records a boundary in the consumed kernel: its signer gate counts the supplied name. Cátedra's separate cryptographic layer rejects an invalid signature, but the kernel receipt may still retain the supplied name. A name at that gate is not proof of identity.
 
-### Degrees, receipts and independent verification
+### Degrees, receipts, and independent verification
 
 - `un título editado a mano no verifica, y dice que la huella ya no calza`
 - `alterar la firma dentro del título tampoco verifica`
@@ -50,9 +52,9 @@ The last test records an important boundary: the kernel signer gate counts the n
 - `la auditoría no cuenta el comprobación ni el recibo como repeticiones del hecho`
 - `la verificación externa declara en su propio resultado lo que no alcanza`
 
-These checks concern the local record, approval rules and verifier behavior. The title's anchor is `pending`; no testnet hash, transaction ID or public explorer entry exists. The tests therefore do not prove that a reader outside Cátedra can verify that a university issued the degree.
+These tests check local record behavior, approval rules, repeat issuance, and the verifier's stated limits. They do not establish that a real university issued the degree. Its anchor remains `pending`; there is no testnet hash, transaction ID, or public explorer entry.
 
-### Terminal and kernel pin
+### Terminal and consumed kernel
 
 - `los cuatro comandos de listado de la terminal funcionan`
 - `la terminal acepta las banderas antes o después del comando`
@@ -61,33 +63,39 @@ These checks concern the local record, approval rules and verifier behavior. The
 - `el encabezado de los cinco módulos declara el mismo commit`
 - `Cátedra carga el núcleo desde la copia vendorizada, no desde el árbol de desarrollo`
 
-The first three check terminal behavior. The last three check the consumed kernel's identity and loading boundary; the digest test is the one currently failing after the installed kernel moved.
+The terminal tests cover listing behavior, flag placement, and nonzero status for a failed act. The kernel tests check the declared commit and that Cátedra loads its vendored copy. The first of those kernel checks is the captured failure described above.
 
-## Adversarial phase
+## Adversarial findings
 
-The project agreement and `FASES.md` report that eight red tests were written before implementation and each was observed failing. The first honest failure was the missing module `../src/catedra.js`. The adversarial work also surfaced three findings beyond the original eight:
+The project agreement and phase record say eight red tests were written before implementation and that each failure was observed. The first honest failure was the missing `../src/catedra.js` module. The adversarial work also surfaced three findings:
 
-1. The kernel signer gate counts a supplied name rather than authenticating a key. The separate project signature layer rejects a bad cryptographic signature, but the kernel receipt still names the supplied person.
-2. Grant timing uses the kernel's real clock. It does not accept an injected `now`, so the example enrollment dates move with the date on which the suite runs.
-3. A rejected attempt remains in the record. It is reported as an unsigned attempt rather than being erased, preserving evidence that it happened.
+1. The kernel signer gate counts a name entered by the operator, not an authenticated key. Cátedra's cryptographic layer rejects an invalid signature, but the kernel receipt can still name the supplied person.
+2. Grant timing uses the kernel's real clock. There is no injected `now`, so the example call dates move with the date on which the suite runs.
+3. A rejected attempt remains in the record as an unsigned attempt. It is not erased, so the record preserves evidence that an attempt occurred.
 
-The sources report a complete 20-step terminal walkthrough that ends on the limits screen. They also report a fresh-session run with the earlier pinned kernel and RC5 active on Claude Code, Codex and OpenCode: 35/35 tests and 27 terminal commands without a crash. That is a historical run against the old pin, not the result against today's installed kernel.
+## Walkthrough and prior run
 
-## How to rerun after code opens
+The project materials report a complete 20-step terminal walkthrough that ends on a screen describing the limits. They also record a fresh-session run with the earlier pinned kernel and RC5 active on Claude Code, Codex, and OpenCode: 35/35 tests and 27 terminal commands without a crash. That is a historical run against the old pin. It is not the captured result against the currently installed kernel.
 
-From the project root, run `npm test` to reproduce the suite and `node src/recorrido.js` to run the documented walkthrough. The source package also defines `npm run recorrido`, `npm run cli`, and `npm run fuera`. Before expecting a green suite against the installed kernel, the project must be explicitly re-pinned and the suite rerun; the project intentionally does not accept a moving kernel silently. The code release is planned for the judges' review period under the review-only license.
+The source materials say the terminal walkthrough's lines come from a real execution. Its transcript is not included in this public repository, so the schematic dialogue in the README is not a quoted run or fabricated output.
 
-No testnet transaction evidence is claimed for Cátedra. Its agreement says there is no blockchain, payment, testnet anchor, transaction ID or explorer entry.
+## How to reproduce when source opens
+
+The project package defines `npm test` for the test suite and `node src/recorrido.js` for the walkthrough. It also defines `npm run recorrido`, `npm run cli`, and `npm run fuera`. The source code is not included in this repository, so these commands cannot be run from this public copy today. Once the code is available, first review the pinned kernel change, then run the suite again. A green result against a new kernel requires an explicit re-pin and fresh test evidence.
+
+No testnet transaction evidence is claimed. The project agreement says there is no blockchain, payment flow, testnet anchor, transaction ID, or explorer entry.
 
 ---
 
 # Evidencia
 
-## Resultado actual
+Esta página separa el resultado capturado de las corridas históricas y de las afirmaciones que las pruebas no pueden establecer. Los nombres de prueba se conservan en español tal como aparecen en la suite.
 
-La suite capturada contiene 35 pruebas: 34 pasan, 1 falla y 0 están omitidas o marcadas como pendientes. La prueba que falla es **«el núcleo que consume Cátedra es el corte fijado, módulo por módulo»**. El digest de `continuity.js` no coincide con el esperado. Este fallo es la fijación deliberada del kernel: Cátedra se construyó sobre el corte `54c20c7`, mientras que el kernel instalado ahora es 0.1.3. Los nueve proyectos con código se construyeron contra ese corte del 2026-09-29 y sus propios registros informan suites verdes allí. Cada uno fija el digest del kernel que consume y debe fallar cuando ese kernel se mueve. Volver a fijar contra el kernel instalado y correr las suites está pendiente. Estos resultados muestran un recorrido que funciona, no un producto terminado ni listo para usarse.
+## Suite capturada
 
-La salida capturada de la suite se entregó junto con los materiales del proyecto. Este repositorio público no incluye hoy el código, por lo que los comandos siguientes aplican cuando se abra durante el periodo de revisión de los jueces.
+La corrida capturada informa 35 pruebas: pasan 34, falla 1 y ninguna está omitida o marcada como TODO. La falla corresponde a `el núcleo que consume Cátedra es el corte fijado, módulo por módulo`. Su comprobación módulo por módulo detecta que `continuity.js` ya no coincide con el valor fijado por Cátedra. El acuerdo y las fases identifican el corte de kernel fijado como `54c20c7`; el kernel instalado ahora es `0.1.3`. En la salida capturada, el digest real es `073ecacdf099b0af53e49f3cecf1ba7e9e3ea910a4505ee422034857ac9d8d81` y el digest esperado al fijarlo es `ceba712aa3d9300a83382b90dd5ab97bb5809fe1a3f779c99f0984bf6305e73e`.
+
+La falla es la fijación explícita del kernel al detectar un cambio en la dependencia. Evita que el proyecto trate en silencio otro kernel como si fuera el revisado. Actualizar la fijación requiere una decisión explícita y una nueva ejecución de la suite; ese trabajo sigue pendiente. Hasta entonces, el resultado capturado permanece en 34/35. Esta cifra corresponde a la suite capturada actual, no a la corrida histórica verde descrita más adelante.
 
 ## Qué cubren las pruebas
 
@@ -101,7 +109,7 @@ La salida capturada de la suite se entregó junto con los materiales del proyect
 - `quien no está matriculado no puede entregar, aunque la convocatoria esté abierta`
 - `la entrega con declaración guardada lleva la proporción y la herramienta en el registro`
 
-Comprueban el momento de la matrícula, los permisos por asignatura y la declaración de uso de IA requerida. No verifican si la declaración es cierta.
+Estas pruebas cubren los plazos de matrícula, el permiso por asignatura y la presencia de la declaración de uso de IA. No determinan si la declaración es verdadera.
 
 ### Notas, aprobaciones y correcciones
 
@@ -113,7 +121,7 @@ Comprueban el momento de la matrícula, los permisos por asignatura y la declara
 - `la estudiante no puede firmar su propia nota: el núcleo filtra al agente`
 - `el gate del núcleo cuenta el nombre que le escriban, aunque no sea el profesor: por eso la firma es otra capa`
 
-La última prueba deja constancia de un límite importante: la compuerta de firmantes del kernel cuenta el nombre suministrado. La comprobación criptográfica separada de Cátedra rechaza una firma inválida, pero el recibo del kernel puede conservar el nombre ingresado. Un nombre en esa compuerta no demuestra identidad.
+La última prueba registra un límite del kernel consumido: su compuerta de firmantes cuenta el nombre suministrado. La capa criptográfica separada de Cátedra rechaza una firma inválida, pero el recibo del kernel puede conservar el nombre ingresado. Un nombre en esa compuerta no demuestra identidad.
 
 ### Títulos, recibos y verificación independiente
 
@@ -133,9 +141,9 @@ La última prueba deja constancia de un límite importante: la compuerta de firm
 - `la auditoría no cuenta el comprobación ni el recibo como repeticiones del hecho`
 - `la verificación externa declara en su propio resultado lo que no alcanza`
 
-Estas pruebas tratan el registro local, las reglas de aprobación y el comportamiento del verificador. El anclaje del título está en `pending`; no existe hash de testnet, identificador de transacción ni entrada en un explorador público. Por eso las pruebas no demuestran que alguien ajeno a Cátedra pueda verificar que una universidad emitió el título.
+Estas pruebas revisan el comportamiento del registro local, las reglas de aprobación, la emisión repetida y los límites declarados por el verificador. No establecen que una universidad real haya emitido el título. Su anclaje sigue en `pending`; no hay hash de testnet, identificador de transacción ni entrada en un explorador público.
 
-### Terminal y fijación del kernel
+### Terminal y kernel consumido
 
 - `los cuatro comandos de listado de la terminal funcionan`
 - `la terminal acepta las banderas antes o después del comando`
@@ -144,20 +152,24 @@ Estas pruebas tratan el registro local, las reglas de aprobación y el comportam
 - `el encabezado de los cinco módulos declara el mismo commit`
 - `Cátedra carga el núcleo desde la copia vendorizada, no desde el árbol de desarrollo`
 
-Las primeras tres comprueban la terminal. Las tres últimas comprueban la identidad y frontera de carga del kernel consumido; el test de digest es el que falla ahora que el kernel instalado se movió.
+Las pruebas de terminal cubren el listado, la ubicación de las banderas y el código de salida distinto de cero cuando un acto falla. Las pruebas del kernel comprueban el commit declarado y que Cátedra cargue su copia vendorizada. La primera de esas comprobaciones del kernel es la falla capturada que se explica arriba.
 
-## Fase adversarial
+## Hallazgos adversariales
 
-El acuerdo y `FASES.md` informan que ocho pruebas rojas se escribieron antes de implementar y se observó fallar cada una. El primer fallo honesto fue que faltaba el módulo `../src/catedra.js`. El trabajo adversarial también encontró tres cosas más allá de las ocho pruebas originales:
+El acuerdo y el registro de fases dicen que ocho pruebas rojas se escribieron antes de implementar y que se observó fallar cada una. El primer fallo honesto fue que faltaba el módulo `../src/catedra.js`. El trabajo adversarial también encontró tres cosas:
 
-1. La compuerta de firmantes del kernel cuenta un nombre ingresado en vez de autenticar una clave. La capa de firma del proyecto rechaza una firma criptográfica inválida, pero el recibo del kernel conserva el nombre suministrado.
-2. El reloj de la autoridad usa el reloj real del kernel. No acepta un `now` inyectado, así que las fechas de ejemplo para matricularse cambian según el día en que corre la suite.
-3. Un intento rechazado permanece en el registro. Se informa como intento sin firma en vez de borrarlo, conservando evidencia de que ocurrió.
+1. La compuerta de firmantes del kernel cuenta un nombre ingresado por quien opera, no una clave autenticada. La capa criptográfica de Cátedra rechaza una firma inválida, pero el recibo del kernel aún puede nombrar a la persona indicada.
+2. El reloj de los grants es el reloj real del kernel. No se puede inyectar un `now`, así que las fechas de ejemplo de la convocatoria cambian según el día en que corre la suite.
+3. Un intento rechazado permanece en el registro como intento sin firma. No se borra, por lo que se conserva evidencia de que ocurrió.
 
-Las fuentes informan un recorrido completo de terminal de 20 pasos que termina en la pantalla de límites. También registran una corrida en sesión fresca con el kernel fijado anterior y RC5 activa en Claude Code, Codex y OpenCode: 35/35 pruebas y 27 comandos de terminal sin fallos. Esa corrida histórica corresponde a la fijación anterior, no al resultado contra el kernel instalado hoy.
+## Recorrido y corrida anterior
 
-## Cómo volver a correrlas cuando se abra el código
+Los materiales del proyecto informan un recorrido completo de terminal de 20 pasos que termina en una pantalla sobre los límites. También registran una corrida en sesión fresca con el kernel fijado anterior y RC5 activa en Claude Code, Codex y OpenCode: 35/35 pruebas y 27 comandos de terminal sin fallos. Esa es una corrida histórica contra la fijación anterior. No es el resultado capturado contra el kernel instalado actualmente.
 
-Desde la raíz del proyecto, ejecuta `npm test` para repetir la suite y `node src/recorrido.js` para ejecutar el recorrido documentado. El paquete fuente también define `npm run recorrido`, `npm run cli` y `npm run fuera`. Antes de esperar una suite verde contra el kernel instalado, se debe volver a fijar el kernel de forma explícita y correr de nuevo la suite; el proyecto no acepta silenciosamente que el kernel se mueva. El código se abrirá durante el periodo de revisión de los jueces bajo la licencia de solo revisión.
+Los materiales dicen que las líneas del recorrido de terminal proceden de una ejecución real. Su transcripción no está incluida en este repositorio público, por eso el diálogo esquemático del README no es una cita de corrida ni una salida inventada.
 
-No se reclama evidencia de transacciones de testnet para Cátedra. Su acuerdo dice que no hay blockchain, pagos, anclaje a testnet, identificador de transacción ni explorador.
+## Cómo repetir las pruebas cuando se abra el código
+
+El paquete del proyecto define `npm test` para la suite y `node src/recorrido.js` para el recorrido. También define `npm run recorrido`, `npm run cli` y `npm run fuera`. El código fuente no está en este repositorio, así que hoy no se pueden ejecutar desde esta copia pública. Cuando esté disponible, primero revisa el cambio de fijación del kernel y luego ejecuta otra vez la suite. Para obtener un resultado verde contra un kernel nuevo se necesita una fijación explícita y evidencia de una corrida nueva.
+
+No se afirma que haya evidencia de transacciones de testnet. El acuerdo del proyecto dice que no hay blockchain, pagos, anclaje a testnet, identificador de transacción ni entrada en un explorador.

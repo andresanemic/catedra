@@ -1,57 +1,81 @@
 # Legal framework and limits
 
-## What the project agreement cites
+This page records the legal and verification boundaries stated in the project agreement. It is not a legal opinion or a claim that the described design is suitable for a real university.
 
-The agreement cites Chile's Law 21.719 only as a problem the project illustrates. It says the primary legal text was not read during this project phase and the implementation was not checked against it. No claim of compliance with that law or any other law is made. The agreement says the legal anchor that would correspond to this project was not checked against an official source, so it does not name one.
+## What the agreement says about law
 
-This repository is not a legal review by a competent professional. No competent legal professional has reviewed the project's legal treatment.
+The agreement mentions Chile's Law 21.719 only as a problem the project illustrates. It says the primary text was not read during this phase and the implementation was not checked against that law. Cátedra therefore makes no claim of compliance with Law 21.719 or any other law or standard.
 
-## What is not claimed
+The agreement also says that the legal anchor that might apply to this project was not checked against an official source. It names no other legal authority. This repository is not a legal review by a competent professional, and no competent legal professional is reported to have reviewed the project's treatment of law.
 
-- Cátedra does not claim compliance with Law 21.719 or any other law or standard.
-- The degree's pending anchor does not establish an externally verifiable credential. There is no testnet hash, transaction ID or public explorer entry.
-- The local ed25519 signature links grade content to a key; it does not establish civil identity. The private key is stored beside the record in this demonstration.
-- The project does not verify that an AI-use declaration is true.
-- The fictional university does not represent a real institution, and the project claims no adoption, permission or affiliation with UAI, the UAI Blockchain Laboratory, TECHO, or another third party.
-- The demonstration is not a finished product and does not establish readiness for real institutional use.
+## Three levels of verification
 
-All work described here uses fictional, synthetic data. There are no real personal, health, financial or third-party data in the project.
+**Local record integrity: demonstrated with a boundary.** A separate process recalculates each receipt digest and each record-line hash from the supplied inputs using Node's built-in crypto facilities. Its test runs without loading Cátedra or Vespi. A matching result shows that the supplied local record still matches those integrity values. It does not show who wrote the record or whether the recorded statements are true.
 
-## Open questions
+**Grade signature: demonstrated with a key-custody reservation.** The grade is signed with ed25519 over its content and checked against a registered public key. In this demonstration, the professor's private key is stored beside the record. The signature therefore links content to a key, but it does not establish the civil identity of the person who controlled that key. In a real setting, custody of the private key and publication of the public key would need a separate arrangement; this project does not validate one.
 
-- What legal, privacy and institutional requirements would apply if a real institution used a system like this?
-- What identity verification, key custody and human approval arrangements would be needed in a real setting?
-- What external mechanism, if any, could make a degree independently verifiable, and what would that mechanism actually prove?
-- How should retention, access, correction and deletion work for any real academic record?
+**Degree issuance outside the project: not verified.** The degree anchor remains `pending`. There is no testnet hash, transaction ID, or public explorer entry. A person without this program and this local record has no public location to consult. The agreement treats an item verifiable only through this program as insufficient for its central credential claim, so this project does not present that claim as proven.
 
-These are questions for future work and competent legal review, not conclusions about applicable law.
+## Claims the project does not make
+
+- It does not claim compliance with Law 21.719, another law, or a standard.
+- It does not prove that an AI-use declaration is accurate or complete in substance. The declaration is required as a field, and its truth is not checked.
+- It does not establish that a key belongs to the professor named at the signer gate. The kernel gate counts the entered name; the separate Cátedra signature layer can reject an invalid cryptographic signature, but the kernel receipt can still preserve that name.
+- It does not establish that a real institution adopted the system, granted permission, or is affiliated with the fictional university. No affiliation with UAI, the UAI Blockchain Laboratory, TECHO, or another third party is claimed.
+- It does not show that the degree exists outside the local demonstration or can be independently verified by an outside reader.
+- It does not establish readiness for real institutional use or describe a finished product.
+
+All people, courses, and institutional details in the demonstration are fictional. The project materials state that it uses synthetic data and contains no real personal, health, financial, or third-party data.
+
+## Questions for any future real use
+
+The project leaves these as questions, not conclusions about applicable law or institutional practice:
+
+- Which legal, privacy, and institutional requirements would apply to a real deployment?
+- What identity checks, key custody, and human approval arrangements would be needed?
+- What external mechanism could support independent verification, and precisely what would it prove?
+- How should retention, access, correction, and deletion work for a real academic record?
+
+Answering these would require appropriate legal and institutional review, plus evidence about any external verification mechanism. None is supplied by this demonstration.
 
 ---
 
 # Marco legal y límites
 
-## Lo que cita el acuerdo del proyecto
+Esta página registra las fronteras jurídicas y de verificación descritas en el acuerdo del proyecto. No es una opinión jurídica ni afirma que el diseño sea adecuado para una universidad real.
 
-El acuerdo cita únicamente la Ley 21.719 de Chile como un problema que el proyecto ilustra. Dice que durante esta fase no se leyó el texto legal primario ni se contrastó la implementación con esa ley. No se afirma cumplimiento de esa ley ni de otra. El acuerdo señala que no se comprobó en una fuente oficial el ancla normativa que correspondería a este proyecto, por eso no la nombra.
+## Lo que dice el acuerdo sobre la ley
 
-Este repositorio no es una revisión jurídica hecha por una persona competente. Ninguna persona competente en derecho ha revisado el tratamiento jurídico del proyecto.
+El acuerdo menciona la Ley 21.719 de Chile únicamente como un problema que el proyecto ilustra. Indica que durante esta fase no se leyó el texto primario ni se contrastó la implementación con esa ley. Por eso Cátedra no afirma cumplir la Ley 21.719 ni ninguna otra ley o norma.
 
-## Lo que no se afirma
+El acuerdo también señala que no se comprobó en una fuente oficial el ancla normativa que podría corresponder a este proyecto. No nombra otra autoridad jurídica. Este repositorio no es una revisión hecha por una persona competente en derecho y no informa que una persona competente haya revisado el tratamiento jurídico del proyecto.
 
-- Cátedra no afirma cumplir la Ley 21.719 ni ninguna otra ley o norma.
-- El anclaje pendiente del título no demuestra una credencial verificable desde afuera. No hay hash de testnet, identificador de transacción ni entrada en un explorador público.
-- La firma ed25519 local liga el contenido de la nota a una clave; no demuestra identidad civil. En esta demostración la clave privada se guarda junto al registro.
-- El proyecto no verifica si una declaración de uso de IA es cierta.
-- La universidad ficticia no representa a una institución real y el proyecto no reclama adopción, permiso ni afiliación con la UAI, el Laboratorio Blockchain UAI, TECHO ni otro tercero.
-- La demostración no es un producto terminado ni acredita que esté lista para uso institucional real.
+## Tres niveles de verificación
 
-Todo el trabajo descrito aquí usa datos de fantasía y sintéticos. El proyecto no contiene datos reales personales, de salud, financieros ni de terceros.
+**Integridad del registro local: demostrada con una frontera.** Un proceso aparte recalcula el digest de cada recibo y la huella de cada línea del registro con los datos suministrados mediante las funciones criptográficas integradas de Node. Su prueba corre sin cargar Cátedra ni Vespi. Un resultado coincidente muestra que el registro local entregado conserva esos valores de integridad. No revela quién escribió el registro ni si lo que declara es cierto.
 
-## Preguntas abiertas
+**Firma de la nota: demostrada con una reserva sobre custodia.** La nota se firma con ed25519 sobre su contenido y se comprueba contra una clave pública registrada. En esta demostración, la clave privada del profesor está guardada junto al registro. Por eso la firma vincula el contenido con una clave, pero no establece la identidad civil de quien la controlaba. En un contexto real habría que resolver aparte la custodia de la clave privada y la publicación de la clave pública; el proyecto no valida ese arreglo.
 
-- ¿Qué requisitos jurídicos, de privacidad e institucionales aplicarían si una institución real usara un sistema como este?
-- ¿Qué arreglos de verificación de identidad, custodia de claves y aprobación humana se necesitarían en un contexto real?
-- ¿Qué mecanismo externo, si alguno, podría hacer verificable un título de forma independiente y qué demostraría realmente?
+**Emisión del título fuera del proyecto: no verificada.** El anclaje del título sigue en `pending`. No hay hash de testnet, identificador de transacción ni entrada en un explorador público. Una persona sin este programa y sin este registro local no tiene un lugar público que consultar. El acuerdo considera insuficiente para su afirmación central que el título solo se pueda verificar mediante este programa, así que el proyecto no presenta esa afirmación como demostrada.
+
+## Lo que el proyecto no afirma
+
+- No afirma cumplir la Ley 21.719, otra ley ni una norma.
+- No prueba que una declaración de uso de IA sea sustancialmente exacta o completa. La declaración se exige como campo, pero no se comprueba su veracidad.
+- No establece que una clave pertenezca al profesor nombrado en la compuerta de firmantes. La compuerta del kernel cuenta el nombre ingresado; la capa de firma criptográfica separada de Cátedra puede rechazar una firma inválida, pero el recibo del kernel aún puede conservar ese nombre.
+- No establece que una institución real haya adoptado el sistema, dado permiso o esté afiliada con la universidad ficticia. No se reclama afiliación con la UAI, el Laboratorio Blockchain UAI, TECHO ni otro tercero.
+- No demuestra que el título exista fuera de la demostración local ni que un lector externo pueda verificarlo de forma independiente.
+- No acredita preparación para uso institucional real ni describe un producto terminado.
+
+Las personas, asignaturas y características institucionales de la demostración son de fantasía. Los materiales del proyecto indican que usa datos sintéticos y que no contiene datos reales personales, de salud, financieros ni de terceros.
+
+## Preguntas para un posible uso real futuro
+
+El proyecto deja estas preguntas abiertas; no son conclusiones sobre la ley aplicable ni sobre la práctica institucional:
+
+- ¿Qué requisitos jurídicos, de privacidad e institucionales aplicarían a un despliegue real?
+- ¿Qué comprobaciones de identidad, custodia de claves y aprobaciones humanas se necesitarían?
+- ¿Qué mecanismo externo podría permitir una verificación independiente y qué demostraría con precisión?
 - ¿Cómo deberían funcionar la conservación, el acceso, la corrección y la eliminación de un registro académico real?
 
-Estas preguntas corresponden a trabajo futuro y revisión jurídica competente; no son conclusiones sobre la ley aplicable.
+Responderlas requeriría una revisión jurídica e institucional adecuada y evidencia del mecanismo externo de verificación que se eligiera. Esta demostración no aporta ninguna de las dos.
