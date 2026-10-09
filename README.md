@@ -11,6 +11,11 @@
   <a href="https://github.com/andresanemic/vespi/tree/ed559e83c976dd6e6a379a5510db776206f670b4"><img src="https://img.shields.io/badge/kernel-0.1.5_release-ed559e8?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.5 release (commit ed559e8)"></a>
 </p>
 
+<p align="center"><b>Cátedra</b> — academic records are scattered and nobody can see who authorised what.<br>
+Each academic act has an authority and a record anyone can check. Evidence: 36/36 tests. Fictional university and data.<br>
+<b>Cátedra</b> — los registros académicos están dispersos y nadie ve quién autorizó qué.<br>
+Cada acto académico tiene una autoridad y un registro que cualquiera puede revisar. Evidencia: 36/36 pruebas. Universidad y datos ficticios.</p>
+
 <p align="center"><b>Read in English · Leer en español</b></p>
 
 ---
