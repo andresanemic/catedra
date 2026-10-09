@@ -1,0 +1,47 @@
+Suite capture — catedra — 2026-10-09
+Command: node --test test/*.test.js (clean clone of commit b822c28, empty HOME, no network)
+Node: v24.15.0 · Kernel: Vespi 0.1.5, commit ed559e83c976dd6e6a379a5510db776206f670b4, copied in vendor/vespi-kernel
+Summary: tests 36 pass 36 fail 0 cancelled 0 skipped 0 todo 0 
+
+✔ el núcleo que consume Cátedra es el corte fijado, módulo por módulo (56.7122ms)
+✔ el encabezado de los cinco módulos declara el mismo commit (1.4089ms)
+✔ Cátedra carga el núcleo desde la copia vendorizada, no desde el árbol de desarrollo (1.1334ms)
+✔ la copia vendorizada calza con su SOURCE.md, módulo por módulo y commit (68.1501ms)
+✔ matricular fuera de la convocatoria vuelve bloqueado con la salida nombrada, y no escribe matrícula (16.074ms)
+✔ matricular antes de que abra la convocatoria también vuelve bloqueado, y dice por qué (8.8645ms)
+✔ dentro de la convocatoria la matrícula sí pasa y deja recibo (15.4455ms)
+✔ entregar sin declarar el uso de IA vuelve bloqueado, aunque la matrícula exista (13.6818ms)
+✔ entregar sin el campo de uso de IA completo también vuelve bloqueado, y dice qué falta (19.5616ms)
+✔ quien no está matriculado no puede entregar, aunque la convocatoria esté abierta (7.3277ms)
+✔ la entrega con declaración guardada lleva la proporción y la herramienta en el registro (17.0734ms)
+✔ sin que el profesor firme, la nota no se escribe y el núcleo pregunta (20.8057ms)
+✔ con la firma del profesor la nota se escribe y nombra a quien firmó en el recibo (27.7081ms)
+✔ otro profesor no puede firmar la nota de una asignatura que no imparte (22.6798ms)
+✔ una nota firmada no se edita: la operación no existe (24.4248ms)
+✔ corregir una nota firmada se hace con otra nota que la sustituye, y quedan las dos (37.1528ms)
+✔ la estudiante no puede firmar su propia nota: el núcleo filtra al agente (19.4738ms)
+✔ el gate del núcleo cuenta el nombre que le escriban, aunque no sea el profesor: por eso la firma es otra capa (23.3457ms)
+✔ un título editado a mano no verifica, y dice que la huella ya no calza (78.1733ms)
+✔ alterar la firma dentro del título tampoco verifica (78.582ms)
+✔ un recibo editado a mano no verifica con el núcleo (76.4982ms)
+✔ emitir dos veces el mismo título no crea una segunda credencial (86.4722ms)
+✔ una clave distinta tampoco duplica el título: la credencial es de la persona y el programa (78.9967ms)
+✔ emitir un título de un curso que no existe vuelve bloqueado, y no escribe nada (6.8545ms)
+✔ no se puede emitir un título de alguien que no está matriculado en nada (8.9933ms)
+✔ el título exige dos firmas: con una sola no se emite (63.5028ms)
+✔ la firma liga contenido y no identidad: con la clave al lado verifica integridad, y eso se declara (71.0697ms)
+✔ la verificación fuera del medio corre en un proceso que no carga Cátedra (62.4584ms)
+✔ un título repetido devuelve el recibo del primero, no uno nuevo (69.4009ms)
+✔ el curso que no existe se responde antes que el título repetido (83.5691ms)
+✔ un intento sin firma válida queda escrito pero no cuenta como nota (24.6241ms)
+✔ la auditoría no cuenta el comprobación ni el recibo como repeticiones del hecho (66.8775ms)
+✔ los cuatro comandos de listado de la terminal funcionan (366.6532ms)
+✔ la terminal acepta las banderas antes o después del comando (124.9221ms)
+✔ la terminal devuelve un código distinto de cero cuando el hecho no ocurrió (168.5281ms)
+✔ la verificación externa declara en su propio resultado lo que no alcanza (7.4386ms)
+ℹ tests 36
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0

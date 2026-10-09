@@ -4,9 +4,9 @@ This page separates the captured result from historical runs and from claims the
 
 ## Captured suite
 
-The captured run reports 35 tests: 34 pass, 1 fails, and none are skipped or marked TODO. The failure is `el núcleo que consume Cátedra es el corte fijado, módulo por módulo`. Its module-by-module digest check finds that `continuity.js` no longer matches the value Cátedra pinned. The agreement and phase record identify the pinned kernel cut as `54c20c7`; the installed kernel is now `0.1.3`. In the captured output, the actual digest is `073ecacdf099b0af53e49f3cecf1ba7e9e3ea910a4505ee422034857ac9d8d81` and the expected pinned digest is `ceba712aa3d9300a83382b90dd5ab97bb5809fe1a3f779c99f0984bf6305e73e`.
+The captured run (`docs/suite-2026-10-09.txt`, command `node --test test/*.test.js`) reports 36 tests: 36 pass, 0 fail, 0 skipped, 0 TODO, on Node v24.15.0. It ran in a clean clone with empty HOME and no network against Vespi kernel 0.1.5 (commit `ed559e83c976dd6e6a379a5510db776206f670b4`), vendored in the project and checked module by module against its SOURCE.md.
 
-The failure is the explicit kernel pin detecting a changed dependency. It prevents the project from silently treating a different kernel as the reviewed one. Updating the pin requires an explicit decision and a new suite run; that work is pending. Until then, the captured result remains 34/35. This count is the current captured suite, not the historical green run described below.
+Why the earlier capture was red: on 2026-10-03 the project was pinned to the old kernel cut 0.1.3 (`54c20c7`), so the module-by-module digest check failed by design. That re-pin is done.
 
 ## What the tests cover
 
@@ -62,8 +62,9 @@ These tests check local record behavior, approval rules, repeat issuance, and th
 - `el núcleo que consume Cátedra es el corte fijado, módulo por módulo`
 - `el encabezado de los cinco módulos declara el mismo commit`
 - `Cátedra carga el núcleo desde la copia vendorizada, no desde el árbol de desarrollo`
+- `la copia vendorizada calza con su SOURCE.md, módulo por módulo y commit`
 
-The terminal tests cover listing behavior, flag placement, and nonzero status for a failed act. The kernel tests check the declared commit and that Cátedra loads its vendored copy. The first of those kernel checks is the captured failure described above.
+The terminal tests cover listing behavior, flag placement, and nonzero status for a failed act. The kernel tests check the vendored copy against its SOURCE.md, the declared commit, and that Cátedra loads its vendored copy; all pass in the captured run.
 
 ## Adversarial findings
 
@@ -75,13 +76,13 @@ The project agreement and phase record say eight red tests were written before i
 
 ## Walkthrough and prior run
 
-The project materials report a complete 20-step terminal walkthrough that ends on a screen describing the limits. They also record a fresh-session run with the earlier pinned kernel and RC5 active on Claude Code, Codex, and OpenCode: 35/35 tests and 27 terminal commands without a crash. That is a historical run against the old pin. It is not the captured result against the currently installed kernel.
+The project materials report a complete 20-step terminal walkthrough that ends on a screen describing the limits. They also record a fresh-session run with the earlier pinned kernel and RC5 active on Claude Code, Codex, and OpenCode: 35/35 tests and 27 terminal commands without a crash. That is a historical run against the old pin; the captured result above (36/36 against kernel 0.1.5) is the current one.
 
 The source materials say the terminal walkthrough's lines come from a real execution. Its transcript is not included in this public repository, so the schematic dialogue in the README is not a quoted run or fabricated output.
 
 ## How to reproduce when source opens
 
-The project package defines `npm test` for the test suite and `node src/recorrido.js` for the walkthrough. It also defines `npm run recorrido`, `npm run cli`, and `npm run fuera`. The source code is not included in this repository, so these commands cannot be run from this public copy today. Once the code is available, first review the pinned kernel change, then run the suite again. A green result against a new kernel requires an explicit re-pin and fresh test evidence.
+The project package defines `npm test` for the test suite and `node src/recorrido.js` for the walkthrough. It also defines `npm run recorrido`, `npm run cli`, and `npm run fuera`. The source code is not included in this repository, so these commands cannot be run from this public copy today. Once the code is available, the suite must report 36 tests with 36 pass and 0 fail; `docs/suite-2026-10-09.txt` is the reference for the count and the test names.
 
 No testnet transaction evidence is claimed. The project agreement says there is no blockchain, payment flow, testnet anchor, transaction ID, or explorer entry.
 
@@ -93,9 +94,9 @@ Esta página separa el resultado capturado de las corridas históricas y de las 
 
 ## Suite capturada
 
-La corrida capturada informa 35 pruebas: pasan 34, falla 1 y ninguna está omitida o marcada como TODO. La falla corresponde a `el núcleo que consume Cátedra es el corte fijado, módulo por módulo`. Su comprobación módulo por módulo detecta que `continuity.js` ya no coincide con el valor fijado por Cátedra. El acuerdo y las fases identifican el corte de kernel fijado como `54c20c7`; el kernel instalado ahora es `0.1.3`. En la salida capturada, el digest real es `073ecacdf099b0af53e49f3cecf1ba7e9e3ea910a4505ee422034857ac9d8d81` y el digest esperado al fijarlo es `ceba712aa3d9300a83382b90dd5ab97bb5809fe1a3f779c99f0984bf6305e73e`.
+La corrida capturada (`docs/suite-2026-10-09.txt`, comando `node --test test/*.test.js`) informa 36 pruebas: 36 pasan, 0 fallan, 0 omitidas, 0 TODO, en Node v24.15.0. Corrió en un clon limpio con HOME vacío y sin red contra el kernel Vespi 0.1.5 (commit `ed559e83c976dd6e6a379a5510db776206f670b4`), vendorizado en el proyecto y comprobado módulo por módulo contra su SOURCE.md.
 
-La falla es la fijación explícita del kernel al detectar un cambio en la dependencia. Evita que el proyecto trate en silencio otro kernel como si fuera el revisado. Actualizar la fijación requiere una decisión explícita y una nueva ejecución de la suite; ese trabajo sigue pendiente. Hasta entonces, el resultado capturado permanece en 34/35. Esta cifra corresponde a la suite capturada actual, no a la corrida histórica verde descrita más adelante.
+Por qué la captura anterior estaba en rojo: el 2026-10-03 el proyecto estaba fijado al corte viejo 0.1.3 (`54c20c7`), así que la comprobación del digest módulo por módulo falló por diseño. Ese re-pin ya está hecho.
 
 ## Qué cubren las pruebas
 
@@ -151,8 +152,9 @@ Estas pruebas revisan el comportamiento del registro local, las reglas de aproba
 - `el núcleo que consume Cátedra es el corte fijado, módulo por módulo`
 - `el encabezado de los cinco módulos declara el mismo commit`
 - `Cátedra carga el núcleo desde la copia vendorizada, no desde el árbol de desarrollo`
+- `la copia vendorizada calza con su SOURCE.md, módulo por módulo y commit`
 
-Las pruebas de terminal cubren el listado, la ubicación de las banderas y el código de salida distinto de cero cuando un acto falla. Las pruebas del kernel comprueban el commit declarado y que Cátedra cargue su copia vendorizada. La primera de esas comprobaciones del kernel es la falla capturada que se explica arriba.
+Las pruebas de terminal cubren el listado, la ubicación de las banderas y el código de salida distinto de cero cuando un acto falla. Las pruebas del kernel comprueban la copia vendorizada contra su SOURCE.md, el commit declarado y que Cátedra cargue su copia vendorizada; todas pasan en la corrida capturada.
 
 ## Hallazgos adversariales
 
@@ -164,12 +166,12 @@ El acuerdo y el registro de fases dicen que ocho pruebas rojas se escribieron an
 
 ## Recorrido y corrida anterior
 
-Los materiales del proyecto informan un recorrido completo de terminal de 20 pasos que termina en una pantalla sobre los límites. También registran una corrida en sesión fresca con el kernel fijado anterior y RC5 activa en Claude Code, Codex y OpenCode: 35/35 pruebas y 27 comandos de terminal sin fallos. Esa es una corrida histórica contra la fijación anterior. No es el resultado capturado contra el kernel instalado actualmente.
+Los materiales del proyecto informan un recorrido completo de terminal de 20 pasos que termina en una pantalla sobre los límites. También registran una corrida en sesión fresca con el kernel fijado anterior y RC5 activa en Claude Code, Codex y OpenCode: 35/35 pruebas y 27 comandos de terminal sin fallos. Esa es una corrida histórica contra la fijación anterior; el resultado capturado de arriba (36/36 contra el kernel 0.1.5) es el actual.
 
 Los materiales dicen que las líneas del recorrido de terminal proceden de una ejecución real. Su transcripción no está incluida en este repositorio público, por eso el diálogo esquemático del README no es una cita de corrida ni una salida inventada.
 
 ## Cómo repetir las pruebas cuando se abra el código
 
-El paquete del proyecto define `npm test` para la suite y `node src/recorrido.js` para el recorrido. También define `npm run recorrido`, `npm run cli` y `npm run fuera`. El código fuente no está en este repositorio, así que hoy no se pueden ejecutar desde esta copia pública. Cuando esté disponible, primero revisa el cambio de fijación del kernel y luego ejecuta otra vez la suite. Para obtener un resultado verde contra un kernel nuevo se necesita una fijación explícita y evidencia de una corrida nueva.
+El paquete del proyecto define `npm test` para la suite y `node src/recorrido.js` para el recorrido. También define `npm run recorrido`, `npm run cli` y `npm run fuera`. El código fuente no está en este repositorio, así que hoy no se pueden ejecutar desde esta copia pública. Cuando esté disponible, la suite debe informar 36 pruebas con 36 que pasan y 0 que fallan; `docs/suite-2026-10-09.txt` es la referencia para el conteo y los nombres.
 
 No se afirma que haya evidencia de transacciones de testnet. El acuerdo del proyecto dice que no hay blockchain, pagos, anclaje a testnet, identificador de transacción ni entrada en un explorador.

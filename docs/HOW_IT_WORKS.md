@@ -51,7 +51,7 @@ The check does not prove who wrote the record, who controlled a private key, whe
 
 ## Relationship to Vespi and Lore Plugin
 
-Cátedra consumes the Vespi kernel without modifying it. The project uses its scoped authority grants, operation and receipt model, canonical receipt digest, and human signer gate. The kernel pin is explicit and checked module by module. The test that checks the current digest is the one failing because the installed kernel has moved beyond the cut Cátedra pinned.
+Cátedra consumes the Vespi kernel without modifying it. The project uses its scoped authority grants, operation and receipt model, canonical receipt digest, and human signer gate. The kernel pin is explicit and checked module by module against Vespi 0.1.5; the captured suite passes that check.
 
 The adversarial test found that the kernel signer gate counts the name entered at the gate rather than authenticating a key. Cátedra's separate cryptographic signature check rejects an invalid signature, but the kernel receipt can still retain the supplied name. This distinction is part of the project's evidence, not a claim that the kernel authenticates identities.
 
@@ -120,7 +120,7 @@ La comprobación no demuestra quién escribió el registro, quién controlaba un
 
 ## Relación con Vespi y Lore Plugin
 
-Cátedra consume el kernel de Vespi sin modificarlo. El proyecto usa sus grants de autoridad acotada, su modelo de operaciones y recibos, el digest canónico del recibo y la compuerta de firmantes humanos. La fijación del kernel es explícita y se comprueba módulo por módulo. La prueba del digest actual es la que falla porque el kernel instalado avanzó más allá del corte fijado por Cátedra.
+Cátedra consume el kernel de Vespi sin modificarlo. El proyecto usa sus grants de autoridad acotada, su modelo de operaciones y recibos, el digest canónico del recibo y la compuerta de firmantes humanos. La fijación del kernel es explícita y se comprueba módulo por módulo contra Vespi 0.1.5; la suite capturada pasa esa comprobación.
 
 La prueba adversarial encontró que la compuerta de firmantes del kernel cuenta el nombre ingresado en vez de autenticar una clave. La comprobación criptográfica separada de Cátedra rechaza una firma inválida, pero el recibo del kernel puede conservar el nombre suministrado. Esta distinción forma parte de la evidencia del proyecto y no afirma que el kernel autentique identidades.
 
