@@ -129,6 +129,8 @@ This is a working path, not a finished product or evidence of readiness for inst
 
 Cátedra consumes the Vespi kernel without modifying it. In this project, Vespi supplies scoped grants, the human signer gate, and receipt operations whose digest Cátedra uses for local verification. The adversarial test also records a limit of that boundary: the kernel gate counts a supplied signer name, not an authenticated key. Cátedra's separate cryptographic layer rejects an invalid signature, but the kernel receipt may still retain the supplied name.
 
+**What this relationship means.** The project was built with Lore Plugin's method (its agreement and criterion live in the project, in `acuerdo.md` and `lore/`), and its operations, authority and receipts run on the Vespi kernel 0.1.5, in the pinned copy that Lore Plugin 2.5.1 distributes (`skills/vespi/core/kernel`). That copy sits in the project as `vendor/vespi-kernel` and the suite verifies it against its `SOURCE.md`. Lore Plugin does not run inside the project. This project does not use the kernel's newer capabilities (Stellar pubnet anchors, live x402 settlement, the ZK verifier, emergency access); it exercises the core of operations, authority and receipts.
+
 Lore Plugin supplies the project context and criteria that guide the work; it is not the runtime that records enrollment or issues a grade. The division is practical: project criteria shape the agreed path, while the Vespi kernel handles scoped operations and receipts. Neither makes the pending degree anchor public or proves an external issuance. See [How it works](./docs/HOW_IT_WORKS.md) for the integration boundary.
 
 ## What is not done or verified
@@ -264,6 +266,8 @@ Esto es un recorrido funcional, no un producto terminado ni una prueba de prepar
 ## Cátedra, Vespi y Lore Plugin
 
 Cátedra consume el kernel de Vespi sin modificarlo. En este proyecto, Vespi proporciona autorizaciones acotadas, la compuerta de firmantes humanos y operaciones de recibo cuyo digest Cátedra utiliza en la comprobación local. La prueba adversarial también registra un límite de esa frontera: la compuerta del kernel cuenta el nombre de firmante que se proporciona, no una clave autenticada. La capa criptográfica separada de Cátedra rechaza una firma inválida, pero el recibo del kernel puede conservar el nombre suministrado.
+
+**Qué significa esta relación.** El proyecto se construyó con el método de Lore Plugin (su acuerdo y su criterio viven en el proyecto, en `acuerdo.md` y `lore/`), y sus operaciones, autoridad y recibos corren sobre el kernel de Vespi 0.1.5, en la copia fijada que distribuye Lore Plugin 2.5.1 (`skills/vespi/core/kernel`). Esa copia está en el proyecto como `vendor/vespi-kernel` y la suite la verifica contra su `SOURCE.md`. Lore Plugin no corre dentro del proyecto. Este proyecto no usa las capacidades nuevas del kernel (anclas Stellar pubnet, liquidación x402 en vivo, el verificador ZK, el acceso de emergencia); ejerce el núcleo de operaciones, autoridad y recibos.
 
 Lore Plugin aporta el contexto y los criterios de proyecto que guían el trabajo; no es el sistema que registra matrículas ni firma notas. La división es concreta: los criterios de proyecto orientan el recorrido acordado, mientras el kernel de Vespi gestiona operaciones acotadas y recibos. Ninguno vuelve público el anclaje pendiente ni prueba una emisión externa. [Cómo funciona](./docs/HOW_IT_WORKS.md) explica la frontera de integración.
 
