@@ -157,9 +157,6 @@ This public repository contains the project documentation and evidence, not its 
 <details>
 <summary><b>Leer en español</b></summary>
 
-<p align="center"><b>Cátedra</b> — los registros académicos están dispersos y nadie ve quién autorizó qué.<br>
-Cada acto académico tiene una autoridad y un registro que cualquiera puede revisar. Evidencia: 36/36 pruebas. Universidad y datos ficticios.</p>
-
 <a id="espanol"></a>
 
 **Cátedra recorre un registro académico desde la matrícula hasta una nota firmada por el profesor y un título, dejando un recibo en cada acto institucional.**
