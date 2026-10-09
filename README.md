@@ -1,6 +1,8 @@
-[![Cátedra: aula y diploma que representan un registro académico de actos y recibos](./assets/cover.png)](./assets/cover.png)
+<p align="center">
+  <a href="./assets/cover.png"><img src="./assets/cover.png" alt="Cátedra: a record of academic acts, authority, and receipts" width="100%"></a>
+</p>
 
-# Cátedra
+<h1 align="center">Cátedra</h1>
 
 <p align="center">
   <a href="#english"><img src="https://img.shields.io/badge/status-working_path-D7B698?style=for-the-badge&labelColor=07111A" alt="Status: working path"></a>
@@ -15,6 +17,9 @@
 Each academic act has an authority and a record anyone can check. Evidence: 36/36 tests. Fictional university and data.</p>
 
 <p align="center"><b>Read in English · Leer en español</b></p>
+
+<p align="center"><b>We’re applying to the Find Your Way hackathon and plan to participate in Meridian.</b></p>
+<p align="center"><b>For judges:</b> <a href="./docs/HOW_IT_WORKS.md">How it works</a> · <a href="./docs/EVIDENCE.md">Evidence</a> · <a href="./docs/LEGAL_AND_LIMITS.md">Limits</a> · <a href="./CODE_NOT_INCLUDED.md">Source and review terms</a>.<br>This public snapshot contains documentation and evidence, not runnable source.</p>
 
 ---
 
@@ -34,13 +39,6 @@ Enrollment, submitted work, declarations of AI use, grades, and degrees often si
 The project explores a record in which permission changes with the act. A secretary may enroll a student while a call is open; enrollment in one course permits a submission to that course; the professor assigned to the course signs its grade; and a degree requires the professor and the degree office. Each operation leaves a local receipt. The receipt makes the event inspectable, but it does not turn an unanchored degree into an externally verifiable credential.
 
 All people, courses, and institutional details are fictional. The project uses synthetic data and contains no real personal, health, financial, or third-party data.
-
-## If you are judging Find Your Way or Meridian, start here
-
-- Read the project foundation and its walkthrough. Start with [How it works](./docs/HOW_IT_WORKS.md).
-- Open the test record. See [Evidence](./docs/EVIDENCE.md).
-- Read the legal and verification limits. See [Legal and limits](./docs/LEGAL_AND_LIMITS.md).
-- Review the publication conditions. See [Code not included](./CODE_NOT_INCLUDED.md) and the [review-only license](./LICENSE).
 
 ## In one minute
 
@@ -158,6 +156,8 @@ This public repository contains the project documentation and evidence, not its 
 
 <details>
 <summary><b>Leer en español</b></summary>
+
+<p align="center"><b>Postulamos a la hackatón Find Your Way y planeamos participar en Meridian.</b></p>
 
 <p align="center"><b>Cátedra</b> — los registros académicos están dispersos y nadie ve quién autorizó qué.<br>
 Cada acto académico tiene una autoridad y un registro que cualquiera puede revisar. Evidencia: 36/36 pruebas. Universidad y datos ficticios.</p>
