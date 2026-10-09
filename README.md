@@ -12,9 +12,7 @@
 </p>
 
 <p align="center"><b>Cátedra</b> — academic records are scattered and nobody can see who authorised what.<br>
-Each academic act has an authority and a record anyone can check. Evidence: 36/36 tests. Fictional university and data.<br>
-<b>Cátedra</b> — los registros académicos están dispersos y nadie ve quién autorizó qué.<br>
-Cada acto académico tiene una autoridad y un registro que cualquiera puede revisar. Evidencia: 36/36 pruebas. Universidad y datos ficticios.</p>
+Each academic act has an authority and a record anyone can check. Evidence: 36/36 tests. Fictional university and data.</p>
 
 <p align="center"><b>Read in English · Leer en español</b></p>
 
@@ -160,6 +158,9 @@ This public repository contains the project documentation and evidence, not its 
 
 <details>
 <summary><b>Leer en español</b></summary>
+
+<p align="center"><b>Cátedra</b> — los registros académicos están dispersos y nadie ve quién autorizó qué.<br>
+Cada acto académico tiene una autoridad y un registro que cualquiera puede revisar. Evidencia: 36/36 pruebas. Universidad y datos ficticios.</p>
 
 <a id="espanol"></a>
 
