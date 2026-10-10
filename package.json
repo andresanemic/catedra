@@ -1,0 +1,12 @@
+{
+  "name": "catedra",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Proyecto 5 de los diez de Vespi: la universidad. Matrícula, trabajos con uso de IA declarado, notas firmadas por el profesor y títulos como credenciales verificables. Consume el kernel de Vespi; no lo modifica.",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "recorrido": "node src/recorrido.js",
+    "cli": "node src/cli.js",
+    "fuera": "node src/fuera.js"
+  }
+}

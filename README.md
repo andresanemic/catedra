@@ -17,7 +17,7 @@
 Each academic act has an authority and a record anyone can check. Evidence: 36/36 tests. Fictional university and data.</p>
 
 <p align="center"><b>We’re applying to the Find Your Way hackathon and plan to participate in Meridian.</b></p>
-<p align="center"><b>For judges:</b> <a href="./docs/HOW_IT_WORKS.md">How it works</a> · <a href="./docs/EVIDENCE.md">Evidence</a> · <a href="./docs/LEGAL_AND_LIMITS.md">Limits</a> · <a href="./CODE_NOT_INCLUDED.md">Source and review terms</a>.<br>This public snapshot contains documentation and evidence, not runnable source.</p>
+<p align="center"><b>For judges:</b> <a href="./docs/HOW_IT_WORKS.md">How it works</a> · <a href="./docs/EVIDENCE.md">Evidence</a> · <a href="./docs/LEGAL_AND_LIMITS.md">Limits</a> · <a href="./LICENSE">Review-only license</a>.<br>The source is in this repository: run <code>npm test</code> on Node 24.</p>
 
 ---
 
@@ -138,7 +138,7 @@ The project does not verify that an AI-use declaration is true, that the profess
 
 ## How to review this project
 
-This public repository contains the project documentation and evidence, not its source code. The code is planned to open during the judges' review period under the review-only terms in [LICENSE](./LICENSE). For now, follow [How it works](./docs/HOW_IT_WORKS.md), compare its claims with [Evidence](./docs/EVIDENCE.md), read [Legal and limits](./docs/LEGAL_AND_LIMITS.md), and review the publication conditions in [Code not included](./CODE_NOT_INCLUDED.md).
+The source is in this repository under the review-only terms in [LICENSE](./LICENSE). Follow [How it works](./docs/HOW_IT_WORKS.md), compare its claims with [Evidence](./docs/EVIDENCE.md), read [Legal and limits](./docs/LEGAL_AND_LIMITS.md), and run `npm test` on Node 24 from the project root.
 
 ## Author
 
@@ -148,7 +148,7 @@ This public repository contains the project documentation and evidence, not its 
 
 ---
 
-[How it works](./docs/HOW_IT_WORKS.md) · [Evidence](./docs/EVIDENCE.md) · [Legal and limits](./docs/LEGAL_AND_LIMITS.md) · [Code not included](./CODE_NOT_INCLUDED.md) · [Review-only license](./LICENSE) · [Vespi](https://github.com/andresanemic/vespi) · [Lore Plugin](https://github.com/andresanemic/lore-plugin)
+[How it works](./docs/HOW_IT_WORKS.md) · [Evidence](./docs/EVIDENCE.md) · [Legal and limits](./docs/LEGAL_AND_LIMITS.md) · [Review-only license](./LICENSE) · [Vespi](https://github.com/andresanemic/vespi) · [Lore Plugin](https://github.com/andresanemic/lore-plugin)
 
 </details>
 
@@ -174,7 +174,7 @@ Todas las personas, asignaturas y características institucionales son de fantas
 - Lee la base del proyecto y su recorrido. Empieza por [Cómo funciona](./docs/HOW_IT_WORKS.md).
 - Abre el registro de pruebas. Consulta [Evidencia](./docs/EVIDENCE.md).
 - Lee los límites jurídicos y de verificación. Consulta [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md).
-- Revisa las condiciones de publicación. Consulta [Código no incluido](./CODE_NOT_INCLUDED.md) y la [licencia de solo revisión](./LICENSE).
+- Lee los términos en la [licencia de solo revisión](./LICENSE) y ejecuta `npm test` (Node 24).
 
 ## En un minuto
 
@@ -276,7 +276,7 @@ El proyecto no verifica que una declaración de uso de IA sea verdadera, que la 
 
 ## Cómo revisar este proyecto
 
-Este repositorio público contiene la documentación y la evidencia del proyecto, no su código fuente. Está previsto abrir el código durante el periodo de revisión de los jueces bajo las condiciones de solo revisión de [LICENSE](./LICENSE). Por ahora, sigue [Cómo funciona](./docs/HOW_IT_WORKS.md), contrasta sus afirmaciones con [Evidencia](./docs/EVIDENCE.md), lee [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) y revisa las condiciones de publicación en [Código no incluido](./CODE_NOT_INCLUDED.md).
+El código está en este repositorio bajo las condiciones de solo revisión de [LICENSE](./LICENSE). Sigue [Cómo funciona](./docs/HOW_IT_WORKS.md), contrasta sus afirmaciones con [Evidencia](./docs/EVIDENCE.md), lee [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) y ejecuta `npm test` con Node 24 desde la raíz del proyecto.
 
 ## Autor
 
@@ -286,6 +286,6 @@ Este repositorio público contiene la documentación y la evidencia del proyecto
 
 ---
 
-[Cómo funciona](./docs/HOW_IT_WORKS.md) · [Evidencia](./docs/EVIDENCE.md) · [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) · [Código no incluido](./CODE_NOT_INCLUDED.md) · [Licencia de solo revisión](./LICENSE) · [Vespi](https://github.com/andresanemic/vespi) · [Lore Plugin](https://github.com/andresanemic/lore-plugin)
+[Cómo funciona](./docs/HOW_IT_WORKS.md) · [Evidencia](./docs/EVIDENCE.md) · [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) · [Licencia de solo revisión](./LICENSE) · [Vespi](https://github.com/andresanemic/vespi) · [Lore Plugin](https://github.com/andresanemic/lore-plugin)
 
 </details>

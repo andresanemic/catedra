@@ -80,9 +80,9 @@ The project materials report a complete 20-step terminal walkthrough that ends o
 
 The source materials say the terminal walkthrough's lines come from a real execution. Its transcript is not included in this public repository, so the schematic dialogue in the README is not a quoted run or fabricated output.
 
-## How to reproduce when source opens
+## How to reproduce
 
-The project package defines `npm test` for the test suite and `node src/recorrido.js` for the walkthrough. It also defines `npm run recorrido`, `npm run cli`, and `npm run fuera`. The source code is not included in this repository, so these commands cannot be run from this public copy today. Once the code is available, the suite must report 36 tests with 36 pass and 0 fail; `docs/suite-2026-10-09.txt` is the reference for the count and the test names.
+The project package defines `npm test` for the test suite and `node src/recorrido.js` for the walkthrough. It also defines `npm run recorrido`, `npm run cli`, and `npm run fuera`. The source code is in this repository under the review-only license (reading and cloning for evaluation; no modification or redistribution), so these commands can be run from this copy; run `npm test` on Node 24 from the project root. The suite must report 36 tests with 36 pass and 0 fail; `docs/suite-2026-10-09.txt` is the reference for the count and the test names.
 
 No testnet transaction evidence is claimed. The project agreement says there is no blockchain, payment flow, testnet anchor, transaction ID, or explorer entry.
 
@@ -170,8 +170,8 @@ Los materiales del proyecto informan un recorrido completo de terminal de 20 pas
 
 Los materiales dicen que las líneas del recorrido de terminal proceden de una ejecución real. Su transcripción no está incluida en este repositorio público, por eso el diálogo esquemático del README no es una cita de corrida ni una salida inventada.
 
-## Cómo repetir las pruebas cuando se abra el código
+## Cómo repetir las pruebas
 
-El paquete del proyecto define `npm test` para la suite y `node src/recorrido.js` para el recorrido. También define `npm run recorrido`, `npm run cli` y `npm run fuera`. El código fuente no está en este repositorio, así que hoy no se pueden ejecutar desde esta copia pública. Cuando esté disponible, la suite debe informar 36 pruebas con 36 que pasan y 0 que fallan; `docs/suite-2026-10-09.txt` es la referencia para el conteo y los nombres.
+El paquete del proyecto define `npm test` para la suite y `node src/recorrido.js` para el recorrido. También define `npm run recorrido`, `npm run cli` y `npm run fuera`. El código fuente está en este repositorio bajo la licencia de solo revisión (permite leer y clonar para evaluar, no modificar ni redistribuir), así que se pueden ejecutar desde esta copia; ejecuta `npm test` con Node 24 desde la raíz del proyecto. La suite debe informar 36 pruebas con 36 que pasan y 0 que fallan; `docs/suite-2026-10-09.txt` es la referencia para el conteo y los nombres.
 
 No se afirma que haya evidencia de transacciones de testnet. El acuerdo del proyecto dice que no hay blockchain, pagos, anclaje a testnet, identificador de transacción ni entrada en un explorador.

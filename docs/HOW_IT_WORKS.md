@@ -59,7 +59,7 @@ Lore Plugin provides project criteria and the project context used to guide the 
 
 ## Walkthrough and limits
 
-The project materials report a 20-step terminal walkthrough from enrollment to a limits screen. They also specify `node src/recorrido.js` as its entry point once the source is available. This public repository does not include that source or a transcript, so the dialogue in the README is schematic and should not be read as literal terminal output.
+The project materials report a 20-step terminal walkthrough from enrollment to a limits screen. They also specify `node src/recorrido.js` as its entry point, and that source is in this repository. The repository does not include a transcript of the original run, so the dialogue in the README is schematic and should not be read as literal terminal output.
 
 The agreement describes the effect as local and reversible: an operation writes a line in a project record that can be removed with the project data. It does not send the act to a third-party service. These properties belong to the described demonstration and do not amount to a deployment review for a real institution.
 
@@ -128,7 +128,7 @@ Lore Plugin aporta criterios y el contexto de proyecto que orientan el trabajo. 
 
 ## Recorrido y límites
 
-Los materiales del proyecto informan un recorrido de terminal de 20 pasos, desde la matrícula hasta una pantalla de límites. También indican `node src/recorrido.js` como punto de entrada cuando el código esté disponible. Este repositorio público no incluye ese código ni una transcripción, por eso el diálogo del README es esquemático y no debe leerse como salida literal de la terminal.
+Los materiales del proyecto informan un recorrido de terminal de 20 pasos, desde la matrícula hasta una pantalla de límites. También indican `node src/recorrido.js` como punto de entrada, y ese código está en este repositorio. El repositorio no incluye una transcripción de la ejecución original, por eso el diálogo del README es esquemático y no debe leerse como salida literal de la terminal.
 
 El acuerdo describe el efecto como local y reversible: cada operación escribe una línea en un registro del proyecto que puede eliminarse junto con los datos del proyecto. No envía el acto a un servicio de terceros. Estas propiedades corresponden a la demostración descrita y no constituyen una revisión de despliegue para una institución real.
 
