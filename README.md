@@ -16,8 +16,6 @@
 <p align="center"><b>Cátedra</b> — academic records are scattered and nobody can see who authorised what.<br>
 Each academic act has an authority and a record anyone can check. Evidence: 36/36 tests. Fictional university and data.</p>
 
-<p align="center"><a href="#english"><b>Read in English</b></a> · <a href="#espanol"><b>Leer en español</b></a></p>
-
 <p align="center"><b>We’re applying to the Find Your Way hackathon and plan to participate in Meridian.</b></p>
 <p align="center"><b>For judges:</b> <a href="./docs/HOW_IT_WORKS.md">How it works</a> · <a href="./docs/EVIDENCE.md">Evidence</a> · <a href="./docs/LEGAL_AND_LIMITS.md">Limits</a> · <a href="./CODE_NOT_INCLUDED.md">Source and review terms</a>.<br>This public snapshot contains documentation and evidence, not runnable source.</p>
 
