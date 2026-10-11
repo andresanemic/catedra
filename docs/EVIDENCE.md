@@ -4,7 +4,7 @@ This page separates the captured result from historical runs and from claims the
 
 ## Captured suite
 
-The captured run (`docs/suite-2026-10-09.txt`, command `node --test test/*.test.js`) reports 36 tests: 36 pass, 0 fail, 0 skipped, 0 TODO, on Node v24.15.0. It ran in a clean clone with empty HOME and no network against Vespi kernel 0.1.6 (commit `95f2d614f4492056c8bb2cd951f08d1089027d4f`), vendored in the project and checked module by module against its SOURCE.md.
+The captured run (`docs/suite-2026-10-11.txt`, command `node --test test/*.test.js`) reports 36 tests: 36 pass, 0 fail, 0 skipped, 0 TODO, on Node v24.15.0. It ran in a clean clone with empty HOME and no network against Vespi kernel 0.1.6 (commit `95f2d614f4492056c8bb2cd951f08d1089027d4f`), vendored in the project and checked module by module against its SOURCE.md.
 
 Why the earlier capture was red: on 2026-10-03 the project was pinned to the old kernel cut 0.1.3 (`54c20c7`), so the module-by-module digest check failed by design. That re-pin is done.
 
@@ -82,7 +82,7 @@ The source materials say the terminal walkthrough's lines come from a real execu
 
 ## How to reproduce
 
-The project package defines `npm test` for the test suite and `node src/recorrido.js` for the walkthrough. It also defines `npm run recorrido`, `npm run cli`, and `npm run fuera`. The source code is in this repository under the review-only license (reading and cloning for evaluation; no modification or redistribution), so these commands can be run from this copy; run `npm test` on Node 24 from the project root. The suite must report 36 tests with 36 pass and 0 fail; `docs/suite-2026-10-09.txt` is the reference for the count and the test names.
+The project package defines `npm test` for the test suite and `node src/recorrido.js` for the walkthrough. It also defines `npm run recorrido`, `npm run cli`, and `npm run fuera`. The source code is in this repository under the review-only license (reading and cloning for evaluation; no modification or redistribution), so these commands can be run from this copy; run `npm test` on Node 24 from the project root. The suite must report 36 tests with 36 pass and 0 fail; `docs/suite-2026-10-11.txt` is the reference for the count and the test names.
 
 No testnet transaction evidence is claimed. The project agreement says there is no blockchain, payment flow, testnet anchor, transaction ID, or explorer entry.
 
@@ -94,7 +94,7 @@ Esta página separa el resultado capturado de las corridas históricas y de las 
 
 ## Suite capturada
 
-La corrida capturada (`docs/suite-2026-10-09.txt`, comando `node --test test/*.test.js`) informa 36 pruebas: 36 pasan, 0 fallan, 0 omitidas, 0 TODO, en Node v24.15.0. Corrió en un clon limpio con HOME vacío y sin red contra el kernel Vespi 0.1.6 (commit `95f2d614f4492056c8bb2cd951f08d1089027d4f`), vendorizado en el proyecto y comprobado módulo por módulo contra su SOURCE.md.
+La corrida capturada (`docs/suite-2026-10-11.txt`, comando `node --test test/*.test.js`) informa 36 pruebas: 36 pasan, 0 fallan, 0 omitidas, 0 TODO, en Node v24.15.0. Corrió en un clon limpio con HOME vacío y sin red contra el kernel Vespi 0.1.6 (commit `95f2d614f4492056c8bb2cd951f08d1089027d4f`), vendorizado en el proyecto y comprobado módulo por módulo contra su SOURCE.md.
 
 Por qué la captura anterior estaba en rojo: el 2026-10-03 el proyecto estaba fijado al corte viejo 0.1.3 (`54c20c7`), así que la comprobación del digest módulo por módulo falló por diseño. Ese re-pin ya está hecho.
 
@@ -172,6 +172,6 @@ Los materiales dicen que las líneas del recorrido de terminal proceden de una e
 
 ## Cómo repetir las pruebas
 
-El paquete del proyecto define `npm test` para la suite y `node src/recorrido.js` para el recorrido. También define `npm run recorrido`, `npm run cli` y `npm run fuera`. El código fuente está en este repositorio bajo la licencia de solo revisión (permite leer y clonar para evaluar, no modificar ni redistribuir), así que se pueden ejecutar desde esta copia; ejecuta `npm test` con Node 24 desde la raíz del proyecto. La suite debe informar 36 pruebas con 36 que pasan y 0 que fallan; `docs/suite-2026-10-09.txt` es la referencia para el conteo y los nombres.
+El paquete del proyecto define `npm test` para la suite y `node src/recorrido.js` para el recorrido. También define `npm run recorrido`, `npm run cli` y `npm run fuera`. El código fuente está en este repositorio bajo la licencia de solo revisión (permite leer y clonar para evaluar, no modificar ni redistribuir), así que se pueden ejecutar desde esta copia; ejecuta `npm test` con Node 24 desde la raíz del proyecto. La suite debe informar 36 pruebas con 36 que pasan y 0 que fallan; `docs/suite-2026-10-11.txt` es la referencia para el conteo y los nombres.
 
 No se afirma que haya evidencia de transacciones de testnet. El acuerdo del proyecto dice que no hay blockchain, pagos, anclaje a testnet, identificador de transacción ni entrada en un explorador.
