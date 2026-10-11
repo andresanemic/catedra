@@ -7,11 +7,12 @@
 <p align="center">
   <a href="#english"><img src="https://img.shields.io/badge/status-working_path-D7B698?style=for-the-badge&labelColor=07111A" alt="Status: working path"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-review--only-D7B698?style=for-the-badge&labelColor=07111A" alt="License: review only"></a>
-  <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-36_of_36_pass-D7B698?style=for-the-badge&labelColor=07111A" alt="Suite: 36 of 36 tests pass"></a>
+  <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-36_of_36_pass-D7B698?style=for-the-badge&labelColor=07111A" alt="Suite: 36 of 36 tests pass"></a> <b>It worked.</b>
   <a href="./docs/HOW_IT_WORKS.md"><img src="https://img.shields.io/badge/agreement-written_before_code-E0C170?style=for-the-badge&labelColor=07111A" alt="Agreement written before code"></a>
   <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/built_with-Vespi_%C2%B7_Lore_Plugin-E0C170?style=for-the-badge&labelColor=07111A" alt="Built with Vespi and Lore Plugin"></a>
-  <a href="https://github.com/andresanemic/vespi/tree/ed559e83c976dd6e6a379a5510db776206f670b4"><img src="https://img.shields.io/badge/kernel-0.1.5_release-ed559e8?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.5 release (commit ed559e8)"></a>
+  <a href="https://github.com/andresanemic/vespi/tree/95f2d614f4492056c8bb2cd951f08d1089027d4f"><img src="https://img.shields.io/badge/kernel-0.1.6_pin-95f2d61?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.6 source pin (commit 95f2d61)"></a>
 </p>
+
 
 <p align="center"><b>Cátedra</b> — academic records are scattered and nobody can see who authorised what.<br>
 Each academic act has an authority and a record anyone can check. Evidence: 36/36 tests. Fictional university and data.</p>
@@ -120,7 +121,7 @@ Cátedra is a fictional university intranet and a demonstrated path through a sm
 
 ## Evidence you can open
 
-The captured suite has 36 tests: 36 pass, 0 fail, 0 skipped, 0 TODO, on Node v24.15.0. It ran in a clean clone with empty HOME and no network against Vespi kernel **0.1.5 release** (commit `ed559e83c976dd6e6a379a5510db776206f670b4`), vendored in the project and checked module by module against its SOURCE.md. The 2026-10-03 capture was red because the project was then pinned to the old kernel cut 0.1.3 (`54c20c7`); that re-pin is done. The tests cover enrollment windows, course permissions, required declarations, approval boundaries, grade replacement, two-signature degree issuance, altered records and receipts, terminal behavior, and a separate verifier. [Evidence](./docs/EVIDENCE.md) preserves the test names and adversarial findings.
+The captured suite has 36 tests: 36 pass, 0 fail, 0 skipped, 0 TODO, on Node v24.15.0. It ran in a clean clone with empty HOME and no network against Vespi kernel **0.1.6** (commit `95f2d614f4492056c8bb2cd951f08d1089027d4f`), vendored in the project and checked module by module against its SOURCE.md. The 2026-10-03 capture was red because the project was then pinned to the old kernel cut 0.1.3 (`54c20c7`); that re-pin is done. The tests cover enrollment windows, course permissions, required declarations, approval boundaries, grade replacement, two-signature degree issuance, altered records and receipts, terminal behavior, and a separate verifier. [Evidence](./docs/EVIDENCE.md) preserves the test names and adversarial findings.
 
 This is a working path, not a finished product or evidence of readiness for institutional use. The degree anchor is `pending`: there is no testnet hash, transaction ID, or public explorer entry to inspect. The verifier can recalculate integrity from local inputs; the professor's private key is stored beside the record in this demonstration, so its signature links content to a key and does not establish identity.
 
@@ -128,13 +129,13 @@ This is a working path, not a finished product or evidence of readiness for inst
 
 Cátedra consumes the Vespi kernel without modifying it. In this project, Vespi supplies scoped grants, the human signer gate, and receipt operations whose digest Cátedra uses for local verification. The adversarial test also records a limit of that boundary: the kernel gate counts a supplied signer name, not an authenticated key. Cátedra's separate cryptographic layer rejects an invalid signature, but the kernel receipt may still retain the supplied name.
 
-**What this relationship means.** The project was built with Lore Plugin's method (its agreement and criterion live in the project, in `acuerdo.md` and `lore/`), and its operations, authority and receipts run on the Vespi kernel 0.1.5, in the pinned copy that Lore Plugin 2.5.1 distributes (`skills/vespi/core/kernel`). That copy sits in the project as `vendor/vespi-kernel` and the suite verifies it against its `SOURCE.md`. Lore Plugin does not run inside the project. This project does not use the kernel's newer capabilities (Stellar pubnet anchors, live x402 settlement, the ZK verifier, emergency access); it exercises the core of operations, authority and receipts.
+**What this relationship means.** The project was built with Lore Plugin's method (its agreement and criterion live in the project, in `acuerdo.md` and `lore/`), and its operations, authority and receipts run on the Vespi kernel 0.1.6, in the pinned copy prepared for Lore Plugin 2.5.2 (`skills/vespi/core/kernel`). That copy sits in the project as `vendor/vespi-kernel` and the suite verifies it against its `SOURCE.md`. Lore Plugin does not run inside the project. This project does not use the kernel's newer capabilities (Stellar pubnet anchors, live x402 settlement, the ZK verifier, emergency access); it exercises the core of operations, authority and receipts.
 
 Lore Plugin supplies the project context and criteria that guide the work; it is not the runtime that records enrollment or issues a grade. The division is practical: project criteria shape the agreed path, while the Vespi kernel handles scoped operations and receipts. Neither makes the pending degree anchor public or proves an external issuance. See [How it works](./docs/HOW_IT_WORKS.md) for the integration boundary.
 
 ## What is not done or verified
 
-The project does not verify that an AI-use declaration is true, that the professor's key belongs to the named person, or that an outside university issued a degree. It does not claim compliance with any law. The agreement mentions Chile's Law 21.719 as a concern illustrated by the project, but says the primary legal text was not reviewed and the implementation was not checked against it. No competent legal review is reported. The fictional university has no claimed adoption, permission, or affiliation with a real institution or third party. The kernel is pinned to **0.1.5 release** (`ed559e8`) and checked by the captured suite. [Legal and limits](./docs/LEGAL_AND_LIMITS.md) gives the full boundary.
+The project does not verify that an AI-use declaration is true, that the professor's key belongs to the named person, or that an outside university issued a degree. It does not claim compliance with any law. The agreement mentions Chile's Law 21.719 as a concern illustrated by the project, but says the primary legal text was not reviewed and the implementation was not checked against it. No competent legal review is reported. The fictional university has no claimed adoption, permission, or affiliation with a real institution or third party. The kernel is pinned to **0.1.6** (`95f2d61`) and checked by the captured suite. [Legal and limits](./docs/LEGAL_AND_LIMITS.md) gives the full boundary.
 
 ## How to review this project
 
@@ -156,6 +157,8 @@ The source is in this repository under the review-only terms in [LICENSE](./LICE
 <summary><b>Leer en español</b></summary>
 
 <a id="espanol"></a>
+
+<p align="center"><b>Funcionó.</b></p>
 
 **Cátedra recorre un registro académico desde la matrícula hasta una nota firmada por el profesor y un título, dejando un recibo en cada acto institucional.**
 
@@ -258,7 +261,7 @@ Cátedra es una intranet universitaria ficticia y una demostración de un recorr
 
 ## Evidencia que puedes abrir
 
-La suite capturada tiene 36 pruebas: 36 pasan, 0 fallan, 0 omitidas, 0 TODO, en Node v24.15.0. Corrió en un clon limpio con HOME vacío y sin red contra el kernel Vespi **0.1.5 publicado** (commit `ed559e83c976dd6e6a379a5510db776206f670b4`), vendorizado en el proyecto y comprobado módulo por módulo contra su SOURCE.md. La captura del 2026-10-03 estaba en rojo porque el proyecto estaba fijado al corte viejo 0.1.3 (`54c20c7`); ese re-pin ya está hecho. Las pruebas cubren plazos de matrícula, permisos por asignatura, declaraciones requeridas, límites de aprobación, sustitución de notas, emisión de títulos con dos firmas, alteraciones de registros y recibos, comportamiento de la terminal y un verificador separado. [Evidencia](./docs/EVIDENCE.md) conserva los nombres de las pruebas y los hallazgos adversariales.
+La suite capturada tiene 36 pruebas: 36 pasan, 0 fallan, 0 omitidas, 0 TODO, en Node v24.15.0. Corrió en un clon limpio con HOME vacío y sin red contra el kernel Vespi **0.1.6** (commit `95f2d614f4492056c8bb2cd951f08d1089027d4f`), vendorizado en el proyecto y comprobado módulo por módulo contra su SOURCE.md. La captura del 2026-10-03 estaba en rojo porque el proyecto estaba fijado al corte viejo 0.1.3 (`54c20c7`); ese re-pin ya está hecho. Las pruebas cubren plazos de matrícula, permisos por asignatura, declaraciones requeridas, límites de aprobación, sustitución de notas, emisión de títulos con dos firmas, alteraciones de registros y recibos, comportamiento de la terminal y un verificador separado. [Evidencia](./docs/EVIDENCE.md) conserva los nombres de las pruebas y los hallazgos adversariales.
 
 Esto es un recorrido funcional, no un producto terminado ni una prueba de preparación para uso institucional. El anclaje del título está en `pending`: no hay hash de testnet, identificador de transacción ni entrada en un explorador público. El verificador puede recalcular la integridad con datos locales; en esta demostración la clave privada del profesor está junto al registro, por lo que su firma vincula contenido con una clave, pero no establece identidad.
 
@@ -266,13 +269,13 @@ Esto es un recorrido funcional, no un producto terminado ni una prueba de prepar
 
 Cátedra consume el kernel de Vespi sin modificarlo. En este proyecto, Vespi proporciona autorizaciones acotadas, la compuerta de firmantes humanos y operaciones de recibo cuyo digest Cátedra utiliza en la comprobación local. La prueba adversarial también registra un límite de esa frontera: la compuerta del kernel cuenta el nombre de firmante que se proporciona, no una clave autenticada. La capa criptográfica separada de Cátedra rechaza una firma inválida, pero el recibo del kernel puede conservar el nombre suministrado.
 
-**Qué significa esta relación.** El proyecto se construyó con el método de Lore Plugin (su acuerdo y su criterio viven en el proyecto, en `acuerdo.md` y `lore/`), y sus operaciones, autoridad y recibos corren sobre el kernel de Vespi 0.1.5, en la copia fijada que distribuye Lore Plugin 2.5.1 (`skills/vespi/core/kernel`). Esa copia está en el proyecto como `vendor/vespi-kernel` y la suite la verifica contra su `SOURCE.md`. Lore Plugin no corre dentro del proyecto. Este proyecto no usa las capacidades nuevas del kernel (anclas Stellar pubnet, liquidación x402 en vivo, el verificador ZK, el acceso de emergencia); ejerce el núcleo de operaciones, autoridad y recibos.
+**Qué significa esta relación.** El proyecto se construyó con el método de Lore Plugin (su acuerdo y su criterio viven en el proyecto, en `acuerdo.md` y `lore/`), y sus operaciones, autoridad y recibos corren sobre el kernel de Vespi 0.1.6, en la copia fijada para Lore Plugin 2.5.2 (`skills/vespi/core/kernel`). Esa copia está en el proyecto como `vendor/vespi-kernel` y la suite la verifica contra su `SOURCE.md`. Lore Plugin no corre dentro del proyecto. Este proyecto no usa las capacidades nuevas del kernel (anclas Stellar pubnet, liquidación x402 en vivo, el verificador ZK, el acceso de emergencia); ejerce el núcleo de operaciones, autoridad y recibos.
 
 Lore Plugin aporta el contexto y los criterios de proyecto que guían el trabajo; no es el sistema que registra matrículas ni firma notas. La división es concreta: los criterios de proyecto orientan el recorrido acordado, mientras el kernel de Vespi gestiona operaciones acotadas y recibos. Ninguno vuelve público el anclaje pendiente ni prueba una emisión externa. [Cómo funciona](./docs/HOW_IT_WORKS.md) explica la frontera de integración.
 
 ## Lo que no está hecho ni verificado
 
-El proyecto no verifica que una declaración de uso de IA sea verdadera, que la clave del profesor pertenezca a la persona nombrada ni que una universidad externa haya emitido un título. No afirma cumplir ninguna ley. El acuerdo menciona la Ley 21.719 de Chile como una preocupación que el proyecto ilustra, pero indica que no se revisó el texto legal primario ni se contrastó la implementación con él. No consta una revisión jurídica competente. La universidad ficticia no reclama adopción, permiso ni afiliación con una institución real o un tercero. El kernel está fijado al **0.1.5 publicado** (`ed559e8`) y comprobado por la suite capturada. [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) desarrolla estas fronteras.
+El proyecto no verifica que una declaración de uso de IA sea verdadera, que la clave del profesor pertenezca a la persona nombrada ni que una universidad externa haya emitido un título. No afirma cumplir ninguna ley. El acuerdo menciona la Ley 21.719 de Chile como una preocupación que el proyecto ilustra, pero indica que no se revisó el texto legal primario ni se contrastó la implementación con él. No consta una revisión jurídica competente. La universidad ficticia no reclama adopción, permiso ni afiliación con una institución real o un tercero. El kernel está fijado al **0.1.6** (`95f2d61`) y comprobado por la suite capturada. [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) desarrolla estas fronteras.
 
 ## Cómo revisar este proyecto
 

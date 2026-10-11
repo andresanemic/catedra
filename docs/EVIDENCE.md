@@ -4,7 +4,7 @@ This page separates the captured result from historical runs and from claims the
 
 ## Captured suite
 
-The captured run (`docs/suite-2026-10-09.txt`, command `node --test test/*.test.js`) reports 36 tests: 36 pass, 0 fail, 0 skipped, 0 TODO, on Node v24.15.0. It ran in a clean clone with empty HOME and no network against Vespi kernel 0.1.5 (commit `ed559e83c976dd6e6a379a5510db776206f670b4`), vendored in the project and checked module by module against its SOURCE.md.
+The captured run (`docs/suite-2026-10-09.txt`, command `node --test test/*.test.js`) reports 36 tests: 36 pass, 0 fail, 0 skipped, 0 TODO, on Node v24.15.0. It ran in a clean clone with empty HOME and no network against Vespi kernel 0.1.6 (commit `95f2d614f4492056c8bb2cd951f08d1089027d4f`), vendored in the project and checked module by module against its SOURCE.md.
 
 Why the earlier capture was red: on 2026-10-03 the project was pinned to the old kernel cut 0.1.3 (`54c20c7`), so the module-by-module digest check failed by design. That re-pin is done.
 
@@ -76,7 +76,7 @@ The project agreement and phase record say eight red tests were written before i
 
 ## Walkthrough and prior run
 
-The project materials report a complete 20-step terminal walkthrough that ends on a screen describing the limits. They also record a fresh-session run with the earlier pinned kernel and RC5 active on Claude Code, Codex, and OpenCode: 35/35 tests and 27 terminal commands without a crash. That is a historical run against the old pin; the captured result above (36/36 against kernel 0.1.5) is the current one.
+The project materials report a complete 20-step terminal walkthrough that ends on a screen describing the limits. They also record a fresh-session run with the earlier pinned kernel and RC5 active on Claude Code, Codex, and OpenCode: 35/35 tests and 27 terminal commands without a crash. That is a historical run against the old pin; the captured result above (36/36 against kernel 0.1.6) is the current one.
 
 The source materials say the terminal walkthrough's lines come from a real execution. Its transcript is not included in this public repository, so the schematic dialogue in the README is not a quoted run or fabricated output.
 
@@ -94,7 +94,7 @@ Esta página separa el resultado capturado de las corridas históricas y de las 
 
 ## Suite capturada
 
-La corrida capturada (`docs/suite-2026-10-09.txt`, comando `node --test test/*.test.js`) informa 36 pruebas: 36 pasan, 0 fallan, 0 omitidas, 0 TODO, en Node v24.15.0. Corrió en un clon limpio con HOME vacío y sin red contra el kernel Vespi 0.1.5 (commit `ed559e83c976dd6e6a379a5510db776206f670b4`), vendorizado en el proyecto y comprobado módulo por módulo contra su SOURCE.md.
+La corrida capturada (`docs/suite-2026-10-09.txt`, comando `node --test test/*.test.js`) informa 36 pruebas: 36 pasan, 0 fallan, 0 omitidas, 0 TODO, en Node v24.15.0. Corrió en un clon limpio con HOME vacío y sin red contra el kernel Vespi 0.1.6 (commit `95f2d614f4492056c8bb2cd951f08d1089027d4f`), vendorizado en el proyecto y comprobado módulo por módulo contra su SOURCE.md.
 
 Por qué la captura anterior estaba en rojo: el 2026-10-03 el proyecto estaba fijado al corte viejo 0.1.3 (`54c20c7`), así que la comprobación del digest módulo por módulo falló por diseño. Ese re-pin ya está hecho.
 
@@ -166,7 +166,7 @@ El acuerdo y el registro de fases dicen que ocho pruebas rojas se escribieron an
 
 ## Recorrido y corrida anterior
 
-Los materiales del proyecto informan un recorrido completo de terminal de 20 pasos que termina en una pantalla sobre los límites. También registran una corrida en sesión fresca con el kernel fijado anterior y RC5 activa en Claude Code, Codex y OpenCode: 35/35 pruebas y 27 comandos de terminal sin fallos. Esa es una corrida histórica contra la fijación anterior; el resultado capturado de arriba (36/36 contra el kernel 0.1.5) es el actual.
+Los materiales del proyecto informan un recorrido completo de terminal de 20 pasos que termina en una pantalla sobre los límites. También registran una corrida en sesión fresca con el kernel fijado anterior y RC5 activa en Claude Code, Codex y OpenCode: 35/35 pruebas y 27 comandos de terminal sin fallos. Esa es una corrida histórica contra la fijación anterior; el resultado capturado de arriba (36/36 contra el kernel 0.1.6) es el actual.
 
 Los materiales dicen que las líneas del recorrido de terminal proceden de una ejecución real. Su transcripción no está incluida en este repositorio público, por eso el diálogo esquemático del README no es una cita de corrida ni una salida inventada.
 
