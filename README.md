@@ -135,6 +135,9 @@ Lore Plugin supplies the project context and criteria that guide the work; it is
 
 ## What is not done or verified
 
+Review status: this project has not been audited. The Vespi kernel it runs on has had superreviews with Claude Code and no independent external security audit.
+
+
 The project does not verify that an AI-use declaration is true, that the professor's key belongs to the named person, or that an outside university issued a degree. It does not claim compliance with any law. The agreement mentions Chile's Law 21.719 as a concern illustrated by the project, but says the primary legal text was not reviewed and the implementation was not checked against it. No competent legal review is reported. The fictional university has no claimed adoption, permission, or affiliation with a real institution or third party. The kernel is pinned to **0.1.6** (`98a3328`) and checked by the captured suite. [Legal and limits](./docs/LEGAL_AND_LIMITS.md) gives the full boundary.
 
 ## How to review this project
@@ -274,6 +277,9 @@ Cátedra consume el kernel de Vespi sin modificarlo. En este proyecto, Vespi pro
 Lore Plugin aporta el contexto y los criterios de proyecto que guían el trabajo; no es el sistema que registra matrículas ni firma notas. La división es concreta: los criterios de proyecto orientan el recorrido acordado, mientras el kernel de Vespi gestiona operaciones acotadas y recibos. Ninguno vuelve público el anclaje pendiente ni prueba una emisión externa. [Cómo funciona](./docs/HOW_IT_WORKS.md) explica la frontera de integración.
 
 ## Lo que no está hecho ni verificado
+
+Estado de revisión: este proyecto no ha sido auditado. El kernel de Vespi sobre el que corre ha tenido superreviews con Claude Code y ninguna auditoría de seguridad externa independiente.
+
 
 El proyecto no verifica que una declaración de uso de IA sea verdadera, que la clave del profesor pertenezca a la persona nombrada ni que una universidad externa haya emitido un título. No afirma cumplir ninguna ley. El acuerdo menciona la Ley 21.719 de Chile como una preocupación que el proyecto ilustra, pero indica que no se revisó el texto legal primario ni se contrastó la implementación con él. No consta una revisión jurídica competente. La universidad ficticia no reclama adopción, permiso ni afiliación con una institución real o un tercero. El kernel está fijado al **0.1.6** (`98a3328`) y comprobado por la suite capturada. [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) desarrolla estas fronteras.
 
