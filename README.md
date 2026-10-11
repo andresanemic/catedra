@@ -10,7 +10,7 @@
   <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-36_of_36_pass-D7B698?style=for-the-badge&labelColor=07111A" alt="Suite: 36 of 36 tests pass"></a> <b>It worked.</b>
   <a href="./docs/HOW_IT_WORKS.md"><img src="https://img.shields.io/badge/agreement-written_before_code-E0C170?style=for-the-badge&labelColor=07111A" alt="Agreement written before code"></a>
   <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/built_with-Vespi_%C2%B7_Lore_Plugin-E0C170?style=for-the-badge&labelColor=07111A" alt="Built with Vespi and Lore Plugin"></a>
-  <a href="https://github.com/andresanemic/vespi/tree/7767daa369e464b486ddf16b08b8985e59ec107d"><img src="https://img.shields.io/badge/kernel-0.1.6_pin-7767daa?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.6 source pin (commit 7767daa)"></a>
+  <a href="https://github.com/andresanemic/vespi/tree/98a33280fb35cb1fc7feda483e7dd57b97362c49"><img src="https://img.shields.io/badge/kernel-0.1.6_pin-98a3328?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.6 source pin (commit 98a3328)"></a>
 </p>
 
 
@@ -121,7 +121,7 @@ Cátedra is a fictional university intranet and a demonstrated path through a sm
 
 ## Evidence you can open
 
-The captured suite has 36 tests: 36 pass, 0 fail, 0 skipped, 0 TODO, on Node v24.15.0. It ran in a clean clone with empty HOME and no network against Vespi kernel **0.1.6** (commit `7767daa369e464b486ddf16b08b8985e59ec107d`), vendored in the project and checked module by module against its SOURCE.md. The 2026-10-03 capture was red because the project was then pinned to the old kernel cut 0.1.3 (`54c20c7`); that re-pin is done. The tests cover enrollment windows, course permissions, required declarations, approval boundaries, grade replacement, two-signature degree issuance, altered records and receipts, terminal behavior, and a separate verifier. [Evidence](./docs/EVIDENCE.md) preserves the test names and adversarial findings.
+The captured suite has 36 tests: 36 pass, 0 fail, 0 skipped, 0 TODO, on Node v24.15.0. It ran in a clean clone with empty HOME and no network against Vespi kernel **0.1.6** (commit `98a33280fb35cb1fc7feda483e7dd57b97362c49`), vendored in the project and checked module by module against its SOURCE.md. The 2026-10-03 capture was red because the project was then pinned to the old kernel cut 0.1.3 (`54c20c7`); that re-pin is done. The tests cover enrollment windows, course permissions, required declarations, approval boundaries, grade replacement, two-signature degree issuance, altered records and receipts, terminal behavior, and a separate verifier. [Evidence](./docs/EVIDENCE.md) preserves the test names and adversarial findings.
 
 This is a working path, not a finished product or evidence of readiness for institutional use. The degree anchor is `pending`: there is no testnet hash, transaction ID, or public explorer entry to inspect. The verifier can recalculate integrity from local inputs; the professor's private key is stored beside the record in this demonstration, so its signature links content to a key and does not establish identity.
 
@@ -135,7 +135,7 @@ Lore Plugin supplies the project context and criteria that guide the work; it is
 
 ## What is not done or verified
 
-The project does not verify that an AI-use declaration is true, that the professor's key belongs to the named person, or that an outside university issued a degree. It does not claim compliance with any law. The agreement mentions Chile's Law 21.719 as a concern illustrated by the project, but says the primary legal text was not reviewed and the implementation was not checked against it. No competent legal review is reported. The fictional university has no claimed adoption, permission, or affiliation with a real institution or third party. The kernel is pinned to **0.1.6** (`7767daa`) and checked by the captured suite. [Legal and limits](./docs/LEGAL_AND_LIMITS.md) gives the full boundary.
+The project does not verify that an AI-use declaration is true, that the professor's key belongs to the named person, or that an outside university issued a degree. It does not claim compliance with any law. The agreement mentions Chile's Law 21.719 as a concern illustrated by the project, but says the primary legal text was not reviewed and the implementation was not checked against it. No competent legal review is reported. The fictional university has no claimed adoption, permission, or affiliation with a real institution or third party. The kernel is pinned to **0.1.6** (`98a3328`) and checked by the captured suite. [Legal and limits](./docs/LEGAL_AND_LIMITS.md) gives the full boundary.
 
 ## How to review this project
 
@@ -261,7 +261,7 @@ Cátedra es una intranet universitaria ficticia y una demostración de un recorr
 
 ## Evidencia que puedes abrir
 
-La suite capturada tiene 36 pruebas: 36 pasan, 0 fallan, 0 omitidas, 0 TODO, en Node v24.15.0. Corrió en un clon limpio con HOME vacío y sin red contra el kernel Vespi **0.1.6** (commit `7767daa369e464b486ddf16b08b8985e59ec107d`), vendorizado en el proyecto y comprobado módulo por módulo contra su SOURCE.md. La captura del 2026-10-03 estaba en rojo porque el proyecto estaba fijado al corte viejo 0.1.3 (`54c20c7`); ese re-pin ya está hecho. Las pruebas cubren plazos de matrícula, permisos por asignatura, declaraciones requeridas, límites de aprobación, sustitución de notas, emisión de títulos con dos firmas, alteraciones de registros y recibos, comportamiento de la terminal y un verificador separado. [Evidencia](./docs/EVIDENCE.md) conserva los nombres de las pruebas y los hallazgos adversariales.
+La suite capturada tiene 36 pruebas: 36 pasan, 0 fallan, 0 omitidas, 0 TODO, en Node v24.15.0. Corrió en un clon limpio con HOME vacío y sin red contra el kernel Vespi **0.1.6** (commit `98a33280fb35cb1fc7feda483e7dd57b97362c49`), vendorizado en el proyecto y comprobado módulo por módulo contra su SOURCE.md. La captura del 2026-10-03 estaba en rojo porque el proyecto estaba fijado al corte viejo 0.1.3 (`54c20c7`); ese re-pin ya está hecho. Las pruebas cubren plazos de matrícula, permisos por asignatura, declaraciones requeridas, límites de aprobación, sustitución de notas, emisión de títulos con dos firmas, alteraciones de registros y recibos, comportamiento de la terminal y un verificador separado. [Evidencia](./docs/EVIDENCE.md) conserva los nombres de las pruebas y los hallazgos adversariales.
 
 Esto es un recorrido funcional, no un producto terminado ni una prueba de preparación para uso institucional. El anclaje del título está en `pending`: no hay hash de testnet, identificador de transacción ni entrada en un explorador público. El verificador puede recalcular la integridad con datos locales; en esta demostración la clave privada del profesor está junto al registro, por lo que su firma vincula contenido con una clave, pero no establece identidad.
 
@@ -275,7 +275,7 @@ Lore Plugin aporta el contexto y los criterios de proyecto que guían el trabajo
 
 ## Lo que no está hecho ni verificado
 
-El proyecto no verifica que una declaración de uso de IA sea verdadera, que la clave del profesor pertenezca a la persona nombrada ni que una universidad externa haya emitido un título. No afirma cumplir ninguna ley. El acuerdo menciona la Ley 21.719 de Chile como una preocupación que el proyecto ilustra, pero indica que no se revisó el texto legal primario ni se contrastó la implementación con él. No consta una revisión jurídica competente. La universidad ficticia no reclama adopción, permiso ni afiliación con una institución real o un tercero. El kernel está fijado al **0.1.6** (`7767daa`) y comprobado por la suite capturada. [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) desarrolla estas fronteras.
+El proyecto no verifica que una declaración de uso de IA sea verdadera, que la clave del profesor pertenezca a la persona nombrada ni que una universidad externa haya emitido un título. No afirma cumplir ninguna ley. El acuerdo menciona la Ley 21.719 de Chile como una preocupación que el proyecto ilustra, pero indica que no se revisó el texto legal primario ni se contrastó la implementación con él. No consta una revisión jurídica competente. La universidad ficticia no reclama adopción, permiso ni afiliación con una institución real o un tercero. El kernel está fijado al **0.1.6** (`98a3328`) y comprobado por la suite capturada. [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) desarrolla estas fronteras.
 
 ## Cómo revisar este proyecto
 
