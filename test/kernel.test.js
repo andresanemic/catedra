@@ -57,7 +57,7 @@ test('el encabezado de los cinco módulos declara el mismo commit', () => {
 // quedó roja cuando el corte se movió: medía un archivo que el proyecto ya no
 // carga. Ahora se verifica lo mismo —que lo que Cátedra carga es el corte
 // fijado— contra la ruta real y contra el manifiesto, no contra una ruta ajena.
-const COMMIT_FIJADO = '95f2d614f4492056c8bb2cd951f08d1089027d4f';
+const COMMIT_FIJADO = '7767daa369e464b486ddf16b08b8985e59ec107d';
 
 function manifiesto() {
   const md = fs.readFileSync(path.join(KERNEL, 'SOURCE.md'), 'utf8');

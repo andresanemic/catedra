@@ -4,7 +4,7 @@ This page separates the captured result from historical runs and from claims the
 
 ## Captured suite
 
-The captured run (`docs/suite-2026-10-11.txt`, command `node --test test/*.test.js`) reports 36 tests: 36 pass, 0 fail, 0 skipped, 0 TODO, on Node v24.15.0. It ran in a clean clone with empty HOME and no network against Vespi kernel 0.1.6 (commit `95f2d614f4492056c8bb2cd951f08d1089027d4f`), vendored in the project and checked module by module against its SOURCE.md.
+The captured run (`docs/suite-2026-10-11.txt`, command `node --test test/*.test.js`) reports 36 tests: 36 pass, 0 fail, 0 skipped, 0 TODO, on Node v24.15.0. It ran in a clean clone with empty HOME and no network against Vespi kernel 0.1.6 (commit `7767daa369e464b486ddf16b08b8985e59ec107d`), vendored in the project and checked module by module against its SOURCE.md.
 
 Why the earlier capture was red: on 2026-10-03 the project was pinned to the old kernel cut 0.1.3 (`54c20c7`), so the module-by-module digest check failed by design. That re-pin is done.
 
@@ -94,7 +94,7 @@ Esta página separa el resultado capturado de las corridas históricas y de las 
 
 ## Suite capturada
 
-La corrida capturada (`docs/suite-2026-10-11.txt`, comando `node --test test/*.test.js`) informa 36 pruebas: 36 pasan, 0 fallan, 0 omitidas, 0 TODO, en Node v24.15.0. Corrió en un clon limpio con HOME vacío y sin red contra el kernel Vespi 0.1.6 (commit `95f2d614f4492056c8bb2cd951f08d1089027d4f`), vendorizado en el proyecto y comprobado módulo por módulo contra su SOURCE.md.
+La corrida capturada (`docs/suite-2026-10-11.txt`, comando `node --test test/*.test.js`) informa 36 pruebas: 36 pasan, 0 fallan, 0 omitidas, 0 TODO, en Node v24.15.0. Corrió en un clon limpio con HOME vacío y sin red contra el kernel Vespi 0.1.6 (commit `7767daa369e464b486ddf16b08b8985e59ec107d`), vendorizado en el proyecto y comprobado módulo por módulo contra su SOURCE.md.
 
 Por qué la captura anterior estaba en rojo: el 2026-10-03 el proyecto estaba fijado al corte viejo 0.1.3 (`54c20c7`), así que la comprobación del digest módulo por módulo falló por diseño. Ese re-pin ya está hecho.
 
