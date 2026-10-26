@@ -21,11 +21,11 @@ const { createHash } = require('node:crypto');
 const KERNEL = path.join(__dirname, '..', 'vendor', 'vespi-kernel');
 
 const ESPERADOS = {
-  'authority.js': 'fcf7952489d6f9c42616b52f54832524926d2f2ba6c0ea6514480a7bdc7a265e',
+  'authority.js': '6cdf59ff884c5acc51ea00d7dfa946b6cf2058b67f4779e63250edfc0623d946',
   'continuity.js': 'abbee9cab8c92b2c4680dba2d573bf8eb6a50ab63194e4a0b0b525af5f044e6c',
-  'delegation.js': '357d8b9398ac2b2c3508565e6c2293cc6abff3801f09a60f985dc1c781e002a3',
-  'operation.js': '9a95815fc10435cb55415da1531e1545168eaf209518630b83f24b10f0e78d48',
-  'receipt.js': 'd006eff3538b2c701366ba09d1e41a32d267b2bad44177f0095541ce9b2a644d',
+  'delegation.js': 'd6c96c7fbfe02c7d2c2dc0ec7b5ca54bdc78d8ebdd3e4e5f802b0912183399c4',
+  'operation.js': '5cf64d6bd477ef0f2dd2a5ebc8ec3b391473763d101f8fcb3819000434848399',
+  'receipt.js': '0a443b45967efdf23a6ddaa3abd00361acc87b59297bae94e929b99abe11d69a',
 };
 
 function cuerpo(archivo) {
@@ -57,7 +57,7 @@ test('el encabezado de los cinco módulos declara el mismo commit', () => {
 // quedó roja cuando el corte se movió: medía un archivo que el proyecto ya no
 // carga. Ahora se verifica lo mismo —que lo que Cátedra carga es el corte
 // fijado— contra la ruta real y contra el manifiesto, no contra una ruta ajena.
-const COMMIT_FIJADO = '39d45733839d0a05f60248fc6e5b81c892c464f8';
+const COMMIT_FIJADO = '13dbe24310dab2a12eee26ad51dfdfddbff5458b';
 
 function manifiesto() {
   const md = fs.readFileSync(path.join(KERNEL, 'SOURCE.md'), 'utf8');

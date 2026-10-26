@@ -1,5 +1,7 @@
 # Evidence
 
+> **2026-10-26:** re-pinned to Vespi kernel 0.1.8 (release `v0.1.8-kernel`, commit `13dbe24`); [`suite-2026-10-26.txt`](./suite-2026-10-26.txt) reports 36 of 36 pass. The records below describe the 2026-10-11 capture. · **26 oct. 2026:** nueva fijación al kernel de Vespi 0.1.8; 36 de 36 aprobadas. Los registros de abajo describen la captura del 2026-10-11.
+
 This page separates the captured result from historical runs and from claims the tests cannot establish. The test names below are retained in Spanish as recorded by the suite.
 
 ## Captured suite
